@@ -4,17 +4,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    background-color: #B9B9B9;
-}
 header{
     font-family: 'lato', sans-serif;
     border: 1px;
-    border-color: #86DEEC;
 }
 .header-encabezado{
     background-color: #212121;
     margin-bottom: 30px;
+    border: 2px solid #86DEEC;
+    border-top: .0938rem solid #86DEEC;
 }
 .section-superior{
     display: flex;
@@ -39,7 +37,7 @@ nav .logo img{
     border-radius: 100%;
     width: 6.25rem;
     margin-top: .625rem;
-    margin-left: .625rem;
+    margin-left: 100px;
 }
 nav ul{
     list-style: none;
@@ -62,21 +60,15 @@ nav ul{
 nav #toggle, nav label{
     display: none;
 }
-/* .header-encabezado .nav-bar ul{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.header-encabezado .nav-bar ul a{
-    text-decoration: none;
-    text-transform: none;
-    color: #86DEEC;
-    font-size: 2rem;
-} */
 /**aca empieza el main index */
 main{
     font-family: 'Lato', sans-serif;
     background-color: #212121;
+    border: 2px solid #86DEEC;
+}
+.section-1 a h3{
+    font-family: 'lato', sans-serif;
+    font-size: 1.2rem;
 }
 .section-1 a{
     text-decoration: none;
@@ -93,13 +85,15 @@ main{
 
 .section-1 a img{
     width: 21.875rem;
-    
+    height: 21.875rem;
 }
-.section-1{
+.section-1{row-gap: 3.125rem;
+    column-gap: 1.5625rem;
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
     display: grid;
     width: 100%;
     height: 100%;
-    row-gap: 1.875rem;
     grid-template-columns:100px 1fr 1fr 1fr 100px; /*son 12*/
     grid-template-rows: repeat(3,1fr); /**se pueden creear la cantidad que sea necesaria**/
     grid-template-areas: 
@@ -247,14 +241,16 @@ main{
 
 }
 /**aca empieza el main info**/
-.card-info div{
+.section-info div{
     margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     background-color: #B9B9B9;
     height: 30.5rem;
     width: 30.5rem;
     text-align: center;
+    border-radius: 20%;
 }
-.card-info{
+.section-info{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -265,9 +261,10 @@ main{
 /**aca empieza el footer**/
 footer{
     background-color: #212121;
-    height: 8.5rem;
+    height: 10rem;
     margin-top: 1.875rem;
     font-family: 'Lato', sans-serif;
+    border: 2px solid #86DEEC;
     
 }
 footer .section-redes{
@@ -289,10 +286,10 @@ footer .section-redes .ul-lista{
 footer .section-redes .logo-footer img{
     border-radius: 100%;
     width: 6.25rem;
-    margin-top: 1.25rem;
 }
 footer .section-redes ul li{
     margin-left: 10px;
+    margin-top: 10px;
 }
 footer .section-redes ul li img{
     width: 25px;
@@ -301,17 +298,21 @@ footer .section-redes ul li img{
 footer .section-redes ul .li-discord img{
     border-radius: 100%;
 }
-
 @media(max-width:1280px){
-    
+    nav .logo img{
+        margin-left: 0.625rem;
+    }
     .section-1 a img{
-    width: 350px;
+    width: 18.75rem;
+    height: 18.75rem;
     }
     .section-1{
-        gap:0rem;
-        column-gap: 0px;
-        justify-content: space-around;
         display: grid;
+        row-gap: .9375rem;
+        column-gap: .9375rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        justify-content: space-evenly;
         grid-template-columns: repeat(2,200px);
         grid-template-rows: repeat(5,1fr); 
         grid-template-areas: 
@@ -331,9 +332,7 @@ footer .section-redes ul .li-discord img{
         justify-content: space-between;
         align-items: center;
     }
-    nav form{
-        display: none;
-    }
+    
     nav .menu{
         width: 100%;
         height: 0;
@@ -354,14 +353,18 @@ footer .section-redes ul .li-discord img{
     nav #toggle:checked ~ .menu{
         height: 100%;
     }
+    .d-flex{
+        display: none;
+    }
 }
-@media(max-width:715px){
+@media(max-width:700px){
     .section-1 a img{
-        width: 350px;
+        width: 250px;
+        height: 250px;
         }
         .section-1{
-            gap:0rem;
-            column-gap: 0px;
+            gap:20px;
+            /* column-gap: 0px; */
             justify-content: space-around;
             display: grid;
             grid-template-columns: 200px;
@@ -387,6 +390,10 @@ footer .section-redes ul .li-discord img{
         text-decoration: none;
     }
     .ul-lista a{
+        display: none;
+    }
+    
+    .d-flex{
         display: none;
     }
 }
