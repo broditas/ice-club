@@ -152,47 +152,64 @@ main{
     flex-direction: column;
     color: #86DEEC;
     padding: 30px;
+    font-size: 1.7rem;
 }
-.section-product img{
-    height: 43.75rem;
+.potato img{
+    width: 43.75rem;
+    border: .125rem solid #86DEEC;
 }
-.potato{
+.section-product{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around
+    gap: 10%;
+    
 }
-.potato .div-talle{
-    background-color: #B9B9B9;
+.section-img{
+    background-color: #212121;
+    padding: 20px 70px;
+    margin-top: 3.125rem;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    border: .125rem solid #86DEEC;
+
+}
+.div-talle{
+    color: #86DEEC;
+    border: 2px solid #86DEEC;
+    background-color: #212121;
     height: 23rem;
     width: 15.625rem;
-    gap: 3.75rem;
+    gap:10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 1.5rem;
 }
-.potato .div-talle ul button a{
-    text-decoration: none;
-    color: black;
-    background-color: #c4c2c2;
+.div-talle button{
+    padding: 5px;
+    border:1px solid #86DEEC;
+    background-color: #212121;
+    border-radius: 10%;
 }
-.potato .div-talle button a{
+.div-talle a{
     text-decoration: none;
-    color: black;
-    background-color: #c4c2c2;
+    color: #86DEEC;
 }
 .mas-productos{
     margin: 1.25rem 50rem;
+    margin-top: 6.25rem;
     color: #86DEEC;
 }
 .section-mas button img{
     width: 18rem;
+    height: 18rem;
     
 }
 .section-mas{
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin:0px 5rem 1.875rem 5rem;
     justify-content: space-evenly;
     display: flex;
     align-items: flex-start; 
