@@ -4,6 +4,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+h3{
+    margin: 0px;
+    font-size: 1rem;
+}
+button{
+    font-size: 1rem;
+    font-family: sans-serif;
+    line-height: normal;
+}
+p{
+    margin-bottom: 0px;
+}
 header{
     font-family: 'lato', sans-serif;
     border: 1px;
@@ -87,24 +99,27 @@ main{
     width: 21.875rem;
     height: 21.875rem;
 }
-.section-1{row-gap: 3.125rem;
-    column-gap: 1.5625rem;
+.div-flex{
+    display: flex;
+    justify-content: center;
+}
+.section-1{
+    row-gap: 3.125rem;
+    column-gap: 1.5rem;
     margin-top: 3.125rem;
     margin-bottom: 3.125rem;
     display: grid;
-    width: 100%;
+    width: 75%;
     height: 100%;
-    grid-template-columns:100px 1fr 1fr 1fr 100px; /*son 12*/
+    grid-template-columns: 22.5rem 22.5rem 22.5rem; /*son 12*/
     grid-template-rows: repeat(3,1fr); /**se pueden creear la cantidad que sea necesaria**/
     grid-template-areas: 
-    "item11 item1 item2 item3 item14"
-    "item12 item4 item5 item6 item15"
-    "item13 item7 item8 item9 item16"
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "item7 item8 item9"
     ;
     justify-items: center;
-    align-items: center;
-    justify-content: space-between;
-    align-content: stretch;
+    justify-content: center;
 }
 .item1{
     background-color: #B9B9B9;
@@ -145,7 +160,7 @@ main{
     grid-area: item9;
     
 }
-/**aca main products**/
+/**aca main product**/
 .article-h1{
     display: flex;
     align-items: center;
@@ -160,9 +175,8 @@ main{
 }
 .section-product{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 10%;
     
 }
 .section-img{
@@ -199,9 +213,13 @@ main{
     color: #86DEEC;
 }
 .mas-productos{
-    margin: 1.25rem 50rem;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 6.25rem;
     color: #86DEEC;
+    gap: 3.125rem;
 }
 .section-mas button img{
     width: 18rem;
@@ -209,7 +227,8 @@ main{
     
 }
 .section-mas{
-    margin:0px 5rem 1.875rem 5rem;
+    margin-bottom:1.875rem ;
+    gap: 1.875rem;
     justify-content: space-evenly;
     display: flex;
     align-items: flex-start; 
@@ -274,7 +293,78 @@ main{
     flex-direction: row;
     align-items: center;
 }
+/* aca empieza la galeria  */
+.glr-flex{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+}
+.glr-grid{
+    row-gap: 1.3rem;
+    column-gap: 1.3rem;
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+    display: grid;
+    width: 60%;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-areas: 
+    "item1 item2"
+    "item3 item4"
+    "item5 item4"
+    "item6 item6"
+    "item7 item8"
+    ;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: stretch;
+}
+.glr-1{
+    grid-area: item1;
+    width: 100%;
+    height: 100%;
+}
+.glr-2{
+    grid-area: item2;
+    width: 100%;
+    height: 100%;
+}
+.glr-3{
+    grid-area: item3;
+    width: 100%;
+    height: 100%;
+}
+.glr-4{
+    grid-area: item4;
+    width: 100%;
+    height: 100%;
+}
+.glr-5{
+    grid-area: item5;
+    width: 100%;
+    height: 100%;
+}
+.glr-6{
+    grid-area: item6;
+    width: 100%;
+    height: 100%;
+}
+.glr-7{
+    grid-area: item7;
+    width: 100%;
+    height: 100%;
+}
+.glr-8{
+    grid-area: item8;
+    width: 100%;
+    height: 100%;
+}
 
+
+.glr-grid img{
+    width: 100%;
+}
 /**aca empieza el footer**/
 footer{
     background-color: #212121;
@@ -325,11 +415,12 @@ footer .section-redes ul .li-discord img{
     }
     .section-1{
         display: grid;
-        row-gap: .9375rem;
-        column-gap: .9375rem;
+        width: 100%;
+        /* row-gap: .9375rem;
+        column-gap: 20px; */
         margin-top: 1.25rem;
         margin-bottom: 1.25rem;
-        justify-content: space-evenly;
+        justify-content: space-around;
         grid-template-columns: repeat(2,200px);
         grid-template-rows: repeat(5,1fr); 
         grid-template-areas: 
@@ -340,9 +431,22 @@ footer .section-redes ul .li-discord img{
         "item9 item"
         ;
     }
+    .mas-productos .mas-4{
+        display: none;
+    }
 }
 
-@media(max-width: 920px){
+@media(max-width:1100px){
+    .section-product .section-img{
+        padding: 10px;
+        width: 700;
+    }
+    .section-product .potato img{
+        width: 37.5rem;
+    }
+}
+
+@media(max-width: 991px){
     nav{
         display: flex;
         flex-direction: row;
@@ -373,6 +477,42 @@ footer .section-redes ul .li-discord img{
     .d-flex{
         display: none;
     }
+    .mas-productos .mas3{
+        display: none;
+    }
+    
+    .section-product .section-img{
+        padding: 1px;
+        width: 700;
+    }
+    .section-product .potato img{
+        width: 31.25rem;
+    }
+    .div-talle{
+        font-size: 1rem;
+        width: 13.75rem;
+    }
+}
+@media(max-width:730px){
+    .section-product{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .section-product .potato img{
+        width: 18.75rem;
+        margin-bottom: 10px;
+    }
+    .div-talle{
+        height: 200px;
+    }
+    .mas-productos{
+        margin-top: 1rem;
+    }
+    .mas-productos .mas2{
+        display: none;
+    }
+
 }
 @media(max-width:700px){
     .section-1 a img{
@@ -414,4 +554,5 @@ footer .section-redes ul .li-discord img{
         display: none;
     }
 }
+
 
