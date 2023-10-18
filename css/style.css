@@ -16,6 +16,9 @@ button{
 p{
     margin-bottom: 0px;
 }
+ul{
+    padding: 0px;
+}
 header{
     font-family: 'lato', sans-serif;
     border: 1px;
@@ -54,8 +57,9 @@ nav .logo img{
 nav ul{
     list-style: none;
     display: flex;
-    gap: 100px;
-    flex-wrap: wrap;
+    gap: 5%;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 .menu{
     display: flex;
@@ -459,11 +463,16 @@ footer .section-redes ul .li-discord img{
         height: 0;
         overflow: hidden;
     }
+    .menu a{
+        font-size: 30px;
+    }
     nav ul{
+        flex-wrap: wrap;
         flex-direction: row;
         align-items: center;
         padding: 0.5rem 0px;
-        gap: 50px;
+        gap: 4%;
+        width: 100%;
     }
     nav label{
         display: flex;
@@ -501,10 +510,11 @@ footer .section-redes ul .li-discord img{
     
     .section-product .potato img{
         width: 18.75rem;
-        margin-bottom: 10px;
+        margin-bottom: .625rem;
     }
     .div-talle{
-        height: 200px;
+        height: 12.5rem; 
+        gap: 0rem;
     }
     .mas-productos{
         margin-top: 1rem;
