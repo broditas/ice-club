@@ -252,14 +252,28 @@ main{
 }
 /**aca empieza main acces***/
 .section-acc button img{
-    width: 20rem;
+    width: 200px;
+}
+.flex-acc{
+    display: flex;
+    justify-content: center;
 }
 .section-acc{
     justify-content: space-evenly;
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
-    
+    display: grid;
+    width: 75%;
+    height: 100%;
+    grid-template-columns: repeat(4, 13.75rem); /*son 12*/
+    /* grid-template-rows: repeat(3,1fr);  */
+    /* grid-template-areas: 
+    "item1 item2 item3 item4"
+    "item5 item6 item7 item8"
+    "item9 item10 item11 item12"
+    ; */
+    justify-items: center;
+    justify-content: center;
 }
 .section-acc button{
     background-color: #212121;
@@ -464,7 +478,7 @@ footer .section-redes ul .li-discord img{
         overflow: hidden;
     }
     .menu a{
-        font-size: 30px;
+        font-size: 1.875rem;
     }
     nav ul{
         flex-wrap: wrap;
@@ -500,6 +514,9 @@ footer .section-redes ul .li-discord img{
     .div-talle{
         font-size: 1rem;
         width: 13.75rem;
+    }
+    .section-acc{
+        grid-template-columns: repeat(3, 13.75rem);
     }
 }
 @media(max-width:730px){
@@ -563,6 +580,15 @@ footer .section-redes ul .li-discord img{
     .d-flex{
         display: none;
     }
+    
+    .section-acc{
+        grid-template-columns: repeat(2, 13.75rem);
+    }
 }
 
-
+@media(max-width:450px){
+    
+    .section-acc{
+        grid-template-columns: repeat(1, 13.75rem);
+    }
+}
