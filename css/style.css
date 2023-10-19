@@ -38,7 +38,7 @@ header{
 .nav-wrapper {
     width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 nav{
     display: flex;
@@ -386,21 +386,22 @@ main{
 /**aca empieza el footer**/
 footer{
     background-color: #212121;
-    height: 10rem;
     margin-top: 1.875rem;
     font-family: 'Lato', sans-serif;
     border: 2px solid #86DEEC;
     
 }
 footer .section-redes{
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    gap: 9.375rem;
 }
 footer .section-redes ul a{
     text-decoration: none;
     color: #86DEEC;
+    font-size: 1.25rem;
 }
 footer .section-redes .ul-lista{
     display: flex;
@@ -462,16 +463,27 @@ footer .section-redes ul .li-discord img{
     .section-product .potato img{
         width: 37.5rem;
     }
+    .section-mas button img{
+        width: 15.625rem;
+        height: 15.625rem;
+        
+    }
+    
 }
 
 @media(max-width: 991px){
+    .header-encabezado{
+        margin-bottom: 1.5625rem;
+    }
     nav{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
-    
+    nav .logo img{
+        width: 5rem;
+    }
     nav .menu{
         width: 100%;
         height: 0;
@@ -493,6 +505,9 @@ footer .section-redes ul .li-discord img{
         color: white;
         cursor: pointer;
         justify-content: flex-end;
+    }
+    nav label img{
+        width: 3.75rem;
     }
     nav #toggle:checked ~ .menu{
         height: 100%;
@@ -518,6 +533,18 @@ footer .section-redes ul .li-discord img{
     .section-acc{
         grid-template-columns: repeat(3, 13.75rem);
     }
+
+    .glr-grid{
+        display: grid;
+        width: 80%;
+        gap: .625rem;
+    }
+    footer{
+        margin-top: 1.5625rem;
+    }
+    footer .section-redes{
+        gap: 0px;
+    }
 }
 @media(max-width:730px){
     .section-product{
@@ -526,7 +553,7 @@ footer .section-redes ul .li-discord img{
     }
     
     .section-product .potato img{
-        width: 18.75rem;
+        width: 25rem;
         margin-bottom: .625rem;
     }
     .div-talle{
@@ -542,6 +569,13 @@ footer .section-redes ul .li-discord img{
 
 }
 @media(max-width:700px){
+    
+    nav label img{
+        width: 2.8125rem;
+    }
+    .menu a{
+        font-size: 1.25rem;
+    }
     .section-1 a img{
         width: 250px;
         height: 250px;
@@ -565,6 +599,11 @@ footer .section-redes ul .li-discord img{
             "item9"
             ;
         }
+    
+    .section-product .potato img{
+        width: 18.75rem;
+        margin-bottom: .625rem;
+    }
     .section-redes{
         display: flex;
         flex-direction: row-reverse;
@@ -587,8 +626,42 @@ footer .section-redes ul .li-discord img{
 }
 
 @media(max-width:450px){
-    
+    .header-encabezado{
+        margin-bottom: 0.625rem;
+    }
+    nav{
+        padding: .625rem .9375rem;
+    }
     .section-acc{
         grid-template-columns: repeat(1, 13.75rem);
+    }
+    
+    .section-mas button img{
+        width: 12.5rem;
+        height: 12.5rem;
+        
+    }
+    
+    .glr-grid{
+        display: grid;
+        gap: 5px;
+        margin-top: .9375rem;
+        margin-bottom: .9375rem;
+    }
+    footer{
+        margin-top: .625rem;
+    }
+    footer .section-redes .ul-redes li img{
+        width: 1rem;
+        height: 1rem;
+    }
+    footer .section-redes .logo-footer img {
+        width: 3.75rem;
+    }
+}
+@media(max-width:350px){
+    
+    .section-product .potato img{
+        width: 15.625rem;
     }
 }
