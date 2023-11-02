@@ -23,3 +23,10 @@
         0 0 100px rgb(71, 183, 183);
     }
 }
+@mixin animation($direction){
+    &:hover{
+        transform: scale(1.2, 1.2);
+        transform-origin:$direction;
+        transition: transform 0.5s;
+    }
+}

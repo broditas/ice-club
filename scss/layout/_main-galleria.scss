@@ -24,6 +24,12 @@
             height: 100%;
             object-fit: cover;
         }
+        .glr-1, .glr-3, .glr-5, .glr-7{
+            @include animation(top left);
+        }
+        .glr-2,.glr-4,.glr-8{
+            @include animation(top right);
+        }
         .glr-1 {
             grid-area: item1;
         }
