@@ -1,0 +1,50 @@
+.header-encabezado{
+    border: .125rem solid $celeste ;
+    margin-bottom: 1.875rem;
+    background-color: $negrito;
+    nav{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        #toggle, label{
+            display: none;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            ul{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                list-style: none;
+                gap: 5%;
+                li{
+                    &:hover{
+                        transform: translateY(-15px);
+                        transition: transform .7s;
+                    }
+                    a{
+                        text-decoration: none;
+                        text-transform: none;
+                        color: $celeste;
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+        .section-superior{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img{
+            border-radius: 100%;
+            width: 6.25rem;
+            margin-top: .625rem;
+            margin-left: 6.25rem;
+        }
+    }
+}

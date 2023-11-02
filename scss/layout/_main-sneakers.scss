@@ -1,0 +1,45 @@
+.flex-acc{
+    @include flex(row,nowrap,space-evenly,flex-start,0rem);
+    .filtros{
+        @include flex(column,nowrap,center,flex-start,1.25rem);
+        border: $border;
+        padding: 1.25rem;
+        margin: 1.25rem;
+        div{
+            @include flex(row,wrap,flex-start,flex-start,0rem);
+            p,h4,h3{
+                color: $celeste;
+            }
+        }
+        .fil-1{
+            @include flex(row,nowrap,center,center,.625rem)
+        }
+    }
+    .section-acc{
+        display: grid;
+        width: 100%;
+        row-gap: .625rem;
+        margin: .625rem;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        button{
+            background-color: $negrito;
+            border: none;
+            a{
+                text-decoration: none;
+                color: black;
+                @include flex(column,wrap,center,center,0rem);
+                border-radius: 10%;
+                overflow: hidden;
+                background-color: $gris;
+                border: $border;
+                img{
+                    width: 11.25rem;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}

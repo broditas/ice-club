@@ -1,0 +1,25 @@
+@mixin flex($direc,$wrap,$justi,$aling,$gapi){
+    display: flex;
+    flex-direction: $direc;
+    flex-wrap: $wrap;
+    justify-content: $justi;
+    align-items: $aling;
+    gap: $gapi;
+}
+@mixin boton{
+    border: $border;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10%;
+    overflow: hidden;
+    background-color: $gris;
+}
+@mixin neon{
+    &:hover{
+        box-shadow: 0 0 5px rgb(71, 183, 183),
+        0 0 25px rgb(71, 183, 183),
+        0 0 50px rgb(71, 183, 183),
+        0 0 100px rgb(71, 183, 183);
+    }
+}

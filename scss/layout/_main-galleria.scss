@@ -1,0 +1,52 @@
+.glr-flex{
+    @include flex(column,wrap,center,center,0px);
+    .glr-grid{
+        row-gap: 1.3rem;
+        column-gap: 1.3rem;
+        margin-top: 3.125rem;
+        margin-bottom: 3.125rem;
+        display: grid;
+        width: 60%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "item1 item2"
+            "item3 item4"
+            "item5 item4"
+            "item6 item6"
+            "item7 item8"
+        ;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        align-content: stretch;
+        .glr{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .glr-1 {
+            grid-area: item1;
+        }
+        .glr-2 {
+            grid-area: item2;
+        }
+        .glr-3 {
+            grid-area: item3;
+        }
+        .glr-4 {
+            grid-area: item4;
+        }
+        .glr-5 {
+            grid-area: item5;
+        }
+        .glr-6 {
+            grid-area: item6;
+        }
+        .glr-7 {
+            grid-area: item7;
+        }
+        .glr-8 {
+            grid-area: item8;
+        }
+    }
+}

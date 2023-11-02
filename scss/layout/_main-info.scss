@@ -1,0 +1,26 @@
+.div-info{
+    display: flex;
+    justify-content: center;
+    .section-info{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1.25rem;
+        div{
+            background-color: #212121;
+            width: 25rem;
+            height: 26.25rem;
+            text-align: center;
+            border-radius: 20%;
+            color: $celeste;
+            border: $border;
+            margin-top: .625rem;
+            margin-bottom: .625rem;
+            p{
+                margin:20px 10px 10px 10px;
+                a{
+                    color:$celeste;
+                }
+            }
+        }
+    }
+}
