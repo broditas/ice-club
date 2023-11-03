@@ -23,6 +23,9 @@ header {
   font-family: 'lato', sans-serif;
   border: 1px; }
 
+body {
+  background-color: #B9B9B9; }
+
 .header-encabezado {
   border: 0.125rem solid #86DEEC;
   margin-bottom: 1.875rem;
@@ -480,6 +483,23 @@ footer {
     footer .section-redes {
       gap: 0rem; } }
 
+@media (max-width: 760px) {
+  main .glr-flex .glr-grid {
+    width: 90%;
+    gap: .625rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "item1" "item2" "item3" "item4" "item5" "item7" "item8"; }
+    main .glr-flex .glr-grid .glr-6 {
+      display: none; }
+    main .glr-flex .glr-grid .glr-1:hover, main .glr-flex .glr-grid .glr-3:hover, main .glr-flex .glr-grid .glr-5:hover, main .glr-flex .glr-grid .glr-7:hover {
+      transform: scale(1, 1);
+      transform-origin: top left;
+      transition: transform 0.5s; }
+    main .glr-flex .glr-grid .glr-2:hover, main .glr-flex .glr-grid .glr-4:hover, main .glr-flex .glr-grid .glr-8:hover {
+      transform: scale(1, 1);
+      transform-origin: top right;
+      transition: transform 0.5s; } }
+
 @media (max-width: 730px) {
   main .section-product {
     flex-direction: column;
@@ -509,11 +529,11 @@ footer {
     grid-template-columns: 200px;
     grid-template-areas: "item1" "item2" "item3" "item4" "item5" "item6" "item7" "item8" "item9" "item10" "item11" "item12" "item13" "item14"; }
     main .div-flex .section-1 div {
-      width: 15.625rem;
-      height: 18.75rem; }
+      width: 22rem;
+      height: 25rem; }
       main .div-flex .section-1 div a .item-img {
-        width: 15.625rem;
-        height: 15.625rem; }
+        width: 22rem;
+        height: 22rem; }
     main .div-flex .section-1 .item2, main .div-flex .section-1 .item14 {
       display: none; }
     main .div-flex .section-1 .item8 a p {
@@ -538,15 +558,17 @@ footer {
     margin-bottom: 0.625rem; }
     .header-encabezado nav {
       padding: .625rem .9375rem; }
+  main .div-flex .section-1 div {
+    width: 22rem;
+    height: 25.625rem; }
+    main .div-flex .section-1 div a .item-img {
+      width: 22rem;
+      height: 22rem; }
   main .flex-acc .section-acc {
     grid-template-columns: 13.75rem; }
   main .mas-productos .section-mas button a img {
     width: 12.5rem;
     height: 12.5rem; }
-  main .glr-flex .glr-grid {
-    gap: .3125rem;
-    margin-top: .9375rem;
-    margin-bottom: .9375rem; }
   footer {
     margin-top: .625rem; }
     footer .section-redes .ul-redes li a img {
@@ -558,6 +580,20 @@ footer {
     width: 15.625rem;
     height: 20rem; } }
 
-@media (max-width: 350px) {
+@media (max-width: 376px) {
+  main .div-flex .section-1 div {
+    width: 21.4375rem;
+    height: 25rem; }
+    main .div-flex .section-1 div a .item-img {
+      width: 21.4375rem;
+      height: 22rem; }
   main .section-product .section-img .potato img {
     width: 15.625rem; } }
+
+@media (max-width: 360px) {
+  main .div-flex .section-1 div {
+    width: 18rem;
+    height: 21.25rem; }
+    main .div-flex .section-1 div a .item-img {
+      width: 18rem;
+      height: 18rem; } }

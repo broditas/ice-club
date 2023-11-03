@@ -25,10 +25,10 @@
             object-fit: cover;
         }
         .glr-1, .glr-3, .glr-5, .glr-7{
-            @include animation(top left);
+            @include animation(top left,1.2,1.2);
         }
         .glr-2,.glr-4,.glr-8{
-            @include animation(top right);
+            @include animation(top right,1.2,1.2);
         }
         .glr-1 {
             grid-area: item1;

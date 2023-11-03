@@ -46,7 +46,7 @@
             }
         }
     }
-    main{
+    main{ 
         .section-product{
             .section-img{
                 padding: 1px;
@@ -78,7 +78,7 @@
             }
         }
     }
-    main{
+    main{ 
         .flex-acc{
             .filtros{
                 display: none;
@@ -88,7 +88,7 @@
             }
         }
     }
-    main{
+    main{ 
         .glr-flex{
             .glr-grid{
                 width: 80%;
@@ -112,10 +112,38 @@
         }
     }
 }
-
+@media(max-width:760px){
+    main{ 
+        .glr-flex{
+            .glr-grid{
+                width: 90%;
+                gap: .625rem;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "item1"
+                    "item2"
+                    "item3"
+                    "item4"
+                    "item5"
+                    "item7"
+                    "item8"
+                    ;
+                .glr-6{
+                    display: none;
+                }
+                .glr-1, .glr-3, .glr-5, .glr-7{
+                    @include animation(top left,1,1);
+                }
+                .glr-2,.glr-4,.glr-8{
+                    @include animation(top right,1,1);
+                }
+            }
+        }
+    }
+}
 
 @media(max-width:730px){
-    main{
+    main{ 
         .section-product{
             flex-direction: column;
             gap: 32px;
@@ -165,7 +193,7 @@
             }
         }
     }
-    main{
+    main{ 
         .div-flex{
             .section-1{
                 gap: 20px;
@@ -190,12 +218,12 @@
                 "item14"
                 ;
                 div{
-                    width: 15.625rem;
-                    height: 18.75rem;
+                    width: 22rem;
+                    height: 25rem;
                     a{
                         .item-img{
-                            width: 15.625rem;
-                            height: 15.625rem;
+                            width: 22rem;
+                            height: 22rem;
                         }
                     }
                 }
@@ -221,7 +249,7 @@
             }
         }
     }
-    main{
+    main{ 
         .section-product{
             .section-img{
                 .potato{
