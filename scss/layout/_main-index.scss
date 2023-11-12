@@ -1,7 +1,7 @@
 main{
     font-family: 'lato', sans-serif;
-    background-color: $negrito;
-    border: .125rem solid $celeste;
+    background-color: map-get($color, negrito);
+    border: .125rem solid map-get($color, celeste);
     .div-flex{
         display: flex;
         justify-content: center;
@@ -16,21 +16,33 @@ main{
             width: 100%;
             grid-template-columns: 22.5rem 22.5rem 22.5rem;
             grid-template-areas:
-            "item1 item2 item3"
+                "item0 item0 item0"
+                "item1 item2 item3"
                 "item4 item5 item6"
                 "item7 item8 item9"
                 "item10 item11 item12"
                 "item13 item14 item15"
+                "item16 item17 item18"
             ;
-            div{
-                width: 350px;
-                height: 26.25rem;
-                border-radius: 10%;
-                overflow: hidden;
-                background-color: $gris;
+            .item0{
+                grid-area: item0;
+                max-width: 100%;
+                height: auto;
+            }
+            .video{
                 border: $border;
+                border-radius: 10%;
                 box-shadow: $shadow;
                 @include neon;
+                width: 21.875rem;
+                height: 26.25rem;
+            }
+            .card{
+                @extend .video;
+                width: 350px;
+                height: 26.25rem;
+                overflow: hidden;
+                background-color: map-get($color, gris);
                 a{
                     text-decoration: none;
                     color: black;
@@ -52,9 +64,9 @@ main{
                 height: 26.25rem;
             }
             .item8{
-                background-color: $negrito;
+                background-color: map-get($color, negrito);
                 a p{
-                    color: $celeste;
+                    color: map-get($color, celeste);
                     font-size: 3rem;
                     margin: 1.875rem 2.5rem;
                 }
@@ -71,14 +83,6 @@ main{
                     &:hover{
                         filter: none;
                     }
-                }
-            }
-            article{
-                iframe{
-                    border: $border;
-                    border-radius: 10%;
-                    box-shadow: $shadow;
-                    @include neon;
                 }
             }
         }

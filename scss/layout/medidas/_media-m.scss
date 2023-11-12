@@ -1,6 +1,6 @@
 @media(max-width:991px){
     .header-encabezado{
-        margin-bottom: 1.5rem;
+        margin-bottom: .625rem;
         nav{
             display: flex;
             flex-direction: row;
@@ -106,7 +106,7 @@
         }
     }
     footer{
-        margin-top: 1.5rem;
+        margin-top: .625rem;
         .section-redes{
             gap: 0rem;
         }
@@ -131,12 +131,6 @@
                 .glr-6{
                     display: none;
                 }
-                .glr-1, .glr-3, .glr-5, .glr-7{
-                    @include animation(top left,1,1);
-                }
-                .glr-2,.glr-4,.glr-8{
-                    @include animation(top right,1,1);
-                }
             }
         }
     }
@@ -145,6 +139,7 @@
 @media(max-width:730px){
     main{ 
         .section-product{
+            display: flex;
             flex-direction: column;
             gap: 32px;
             .section-img{
@@ -227,6 +222,9 @@
                         }
                     }
                 }
+                .item0{
+                    display: none;
+                }
                 .item2, .item14{
                     display: none;
                 }
@@ -274,6 +272,25 @@
         .flex-acc{
             .section-acc{
                 grid-template-columns: repeat(2, 13.75rem);
+            }
+        }
+    }
+    .main-404{
+        .div-404{
+            height: 110vh;
+            .text{
+                .gif-1{
+                    width: 25rem;
+                }
+                p{
+                    width: 18.75rem;
+                }
+                .txt{
+                    margin-bottom: .625rem;
+                    &::after{
+                        content: none;
+                    }
+                }
             }
         }
     }

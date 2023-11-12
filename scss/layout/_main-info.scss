@@ -11,14 +11,14 @@
             height: 26.25rem;
             text-align: center;
             border-radius: 20%;
-            color: $celeste;
+            color: map-get($color, celeste);
             border: $border;
             margin-top: .625rem;
             margin-bottom: .625rem;
             p{
                 margin:20px 10px 10px 10px;
                 a{
-                    color:$celeste;
+                    color:map-get($color, celeste);
                 }
             }
         }

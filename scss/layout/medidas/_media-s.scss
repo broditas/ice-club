@@ -25,7 +25,22 @@
     main{ 
         .flex-acc{
             .section-acc{
-                grid-template-columns: 13.75rem;
+                grid-template-columns:repeat(2,0.8fr);
+                margin: .625rem 0px .625rem 0px;
+                button{
+                    width: 150px;
+                    height: 190px;
+                    .a-a{
+                        gap: 2%;
+                        img{
+                            width: 9.375rem;
+                            height: 150px;
+                        }
+                        h3,p{
+                            font-size: 10px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -75,6 +90,15 @@
             }
         }
     }
+    .main-404{
+        .div-404{
+            .text{
+                .gif-1{
+                    width: 18.75rem;
+                }
+            }
+        }
+    }
 }
 
 @media(max-width:376px){
@@ -110,10 +134,10 @@
     main{
         .div-flex{
             .section-1{
-                div{
+                .card{
                     width: 18rem;
                     height: 21.25rem;
-                    a{
+                    .a-a{
                         .item-img{
                             width: 18rem;
                             height: 18rem;

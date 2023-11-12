@@ -1,3 +1,4 @@
+@import "./utilities/maps";
 @import "./utilities/variables";
 @import "./utilities/mixins";
 @import "./base/reset";
@@ -8,6 +9,7 @@
 @import "./layout/main-galleria.scss";
 @import "./layout/main-info.scss";
 @import "./layout/main-product";
+@import "./layout/404";
 @import "./layout/footer";
 @import "./layout/medidas/media-l";
 @import "./layout/medidas/media-m";

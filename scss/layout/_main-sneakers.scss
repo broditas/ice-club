@@ -8,7 +8,7 @@
         div{
             @include flex(row,wrap,flex-start,flex-start,0rem);
             p,h4,h3{
-                color: $celeste;
+                color: map-get($color, celeste);
             }
         }
         .fil-1{
@@ -17,27 +17,29 @@
     }
     .section-acc{
         display: grid;
-        width: 100%;
         row-gap: .625rem;
         margin: .625rem;
         grid-template-columns: repeat(5, 1fr);
         align-items: center;
         justify-items: center;
         justify-content: center;
+        width: 100%;
         button{
-            background-color: $negrito;
+            background-color: map-get($color, negrito);
             border: none;
             a{
                 text-decoration: none;
                 color: black;
-                @include flex(column,wrap,center,center,0rem);
+                @include flex(column,wrap,flex-start,center,0rem);
                 border-radius: 10%;
                 overflow: hidden;
-                background-color: $gris;
+                background-color: map-get($color, gris);
                 border: $border;
+                width: 100%;
+                height: 100%;
                 img{
                     width: 11.25rem;
-                    object-fit: contain;
+                    object-fit: cover;
                 }
             }
         }

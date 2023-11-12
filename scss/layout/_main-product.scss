@@ -1,12 +1,15 @@
 main{
     .section-product{
-        display: flex;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
         align-items: center;
+        justify-items: center;
+        justify-content: center;
         .section-img{
-            background-color: $negrito;
+            background-color: map-get($color, negrito);
             padding: 1.25rem 4.375rem;
             margin-top: 3.125rem;
+            margin-left: 10%;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -15,7 +18,7 @@ main{
                 @include flex(column,wrap,center,center,0px);
                 padding: 1.875rem;
                 h1,p{
-                    color: $celeste;
+                    color: map-get($color, celeste);
                     font-size: 1.7rem;
                 }
             }
@@ -27,40 +30,52 @@ main{
             }
         }
         .section-compra{
+            @include flex(column,wrap,center,center,1.875rem);
+            margin-top: 3.125rem;
             .div-talle{
                 border:$border;
-                background-color: $negrito;
+                background-color: map-get($color, negrito);
                 height: 23rem;
                 width: 15.325rem;
                 @include flex(column,wrap,center,center,10%);
                 ul{
                     h3{
                         font-size: 1.5rem;
-                        color: $celeste;
+                        color: map-get($color, celeste);
                     }
                     button{
                         border: $bordecito;
                         padding: .3125rem;
-                        background-color: $negrito;
+                        background-color: map-get($color, negrito);
                         border-radius: .3125rem;
                         a{
                             text-decoration: none;
-                            color: $celeste;
+                            color: map-get($color, celeste);
                         }
                     }
                 }
                 .button-compra{
                     border: $bordecito;
                         padding: .3125rem;
-                        background-color: $negrito;
+                        background-color: map-get($color, negrito);
                         border-radius: .3125rem;
                         a{
                             text-decoration: none;
-                            color: $celeste;
+                            color: map-get($color, celeste);
                         }
                 }
                 h5,h6{
-                    color: $celeste;
+                    color: map-get($color, celeste);
+                }
+            }
+            .historia{
+                @extend .div-talle;
+                    width: 20rem;
+                    color: map-get($color, celeste);
+                p{
+                    overflow: auto;
+                    font-size: 1.3rem;
+                    margin: 10px
                 }
             }
         }
@@ -69,7 +84,7 @@ main{
         @include flex(column,nowrap,center,center,3.125rem);
         margin-top: 6.25rem;
         h2{
-            color: $celeste;
+            color: map-get($color, celeste);
         }
         .section-mas{
             @include flex(row,wrap,space-evenly,flex-start,1.875rem);

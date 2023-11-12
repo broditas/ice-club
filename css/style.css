@@ -13,7 +13,7 @@ button {
   font-family: sans-serif;
   line-height: normal; }
 
-p {
+p, .main-404 .div-404 .text .txt {
   margin-bottom: 0px; }
 
 ul {
@@ -27,9 +27,9 @@ body {
   background-color: #B9B9B9; }
 
 .header-encabezado {
-  border: 0.125rem solid #86DEEC;
-  margin-bottom: 1.875rem;
-  background-color: #212121; }
+  border: 2px solid #86DEEC;
+  margin-bottom: .625rem;
+  background-color: #131313; }
   .header-encabezado nav {
     display: flex;
     flex-direction: column;
@@ -48,13 +48,16 @@ body {
         list-style: none;
         gap: 5%; }
         .header-encabezado nav .menu ul li:hover {
-          transform: translateY(-15px);
+          transform: scale(1.2);
           transition: transform .7s; }
         .header-encabezado nav .menu ul li a {
           text-decoration: none;
           text-transform: none;
           color: #86DEEC;
           font-size: 2.5rem; }
+          .header-encabezado nav .menu ul li a:hover {
+            color: white;
+            transition: color .7s; }
     .header-encabezado nav .section-superior {
       display: flex;
       flex-direction: row;
@@ -68,7 +71,7 @@ body {
 
 main {
   font-family: 'lato', sans-serif;
-  background-color: #212121;
+  background-color: #131313;
   border: 0.125rem solid #86DEEC; }
   main .div-flex {
     display: flex;
@@ -83,26 +86,34 @@ main {
       display: grid;
       width: 100%;
       grid-template-columns: 22.5rem 22.5rem 22.5rem;
-      grid-template-areas: "item1 item2 item3" "item4 item5 item6" "item7 item8 item9" "item10 item11 item12" "item13 item14 item15"; }
-      main .div-flex .section-1 div {
+      grid-template-areas: "item0 item0 item0" "item1 item2 item3" "item4 item5 item6" "item7 item8 item9" "item10 item11 item12" "item13 item14 item15" "item16 item17 item18"; }
+      main .div-flex .section-1 .item0 {
+        grid-area: item0;
+        max-width: 100%;
+        height: auto; }
+      main .div-flex .section-1 .video, main .div-flex .section-1 .card {
+        border: 2px solid #86DEEC;
+        border-radius: 10%;
+        box-shadow: 11px 11px 22px #121212, -11px -11px 22px rgba(71, 183, 183, 0.347);
+        width: 21.875rem;
+        height: 26.25rem; }
+        main .div-flex .section-1 .video:hover, main .div-flex .section-1 .card:hover {
+          box-shadow: 0 0 5px #47b7b7, 0 0 25px #47b7b7, 0 0 50px #47b7b7, 0 0 100px #47b7b7;
+          transition: box-shadow .3s; }
+      main .div-flex .section-1 .card {
         width: 350px;
         height: 26.25rem;
-        border-radius: 10%;
         overflow: hidden;
-        background-color: #B9B9B9;
-        border: 2px solid #86DEEC;
-        box-shadow: 11px 11px 22px #121212, -11px -11px 22px rgba(71, 183, 183, 0.347); }
-        main .div-flex .section-1 div:hover {
-          box-shadow: 0 0 5px #47b7b7, 0 0 25px #47b7b7, 0 0 50px #47b7b7, 0 0 100px #47b7b7; }
-        main .div-flex .section-1 div a {
+        background-color: #B9B9B9; }
+        main .div-flex .section-1 .card a {
           text-decoration: none;
           color: black;
           display: flex;
           flex-direction: column;
           align-items: center; }
-          main .div-flex .section-1 div a h3 {
+          main .div-flex .section-1 .card a h3 {
             font-size: 1.2rem; }
-          main .div-flex .section-1 div a img {
+          main .div-flex .section-1 .card a img {
             width: 21.875rem;
             height: 21.875rem;
             object-fit: cover; }
@@ -110,12 +121,12 @@ main {
         width: 25rem;
         height: 26.25rem; }
       main .div-flex .section-1 .item8 {
-        background-color: #212121; }
-        main .div-flex .section-1 .item8 a p {
+        background-color: #131313; }
+        main .div-flex .section-1 .item8 a p, main .div-flex .section-1 .item8 a .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .div-flex .section-1 .item8 a .txt {
           color: #86DEEC;
           font-size: 3rem;
           margin: 1.875rem 2.5rem; }
-      main .div-flex .section-1 .item11 a p {
+      main .div-flex .section-1 .item11 a p, main .div-flex .section-1 .item11 a .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .div-flex .section-1 .item11 a .txt {
         font-size: 2rem;
         text-align: center; }
       main .div-flex .section-1 .item11 a img {
@@ -124,12 +135,6 @@ main {
         filter: blur(10px); }
         main .div-flex .section-1 .item11 a img:hover {
           filter: none; }
-      main .div-flex .section-1 article iframe {
-        border: 2px solid #86DEEC;
-        border-radius: 10%;
-        box-shadow: 11px 11px 22px #121212, -11px -11px 22px rgba(71, 183, 183, 0.347); }
-        main .div-flex .section-1 article iframe:hover {
-          box-shadow: 0 0 5px #47b7b7, 0 0 25px #47b7b7, 0 0 50px #47b7b7, 0 0 100px #47b7b7; }
 
 .flex-acc {
   display: flex;
@@ -155,7 +160,7 @@ main {
       justify-content: flex-start;
       align-items: flex-start;
       gap: 0rem; }
-      .flex-acc .filtros div p, .flex-acc .filtros div h4, .flex-acc .filtros div h3 {
+      .flex-acc .filtros div p, .flex-acc .filtros div .main-404 .div-404 .text .txt, .main-404 .div-404 .text .flex-acc .filtros div .txt, .flex-acc .filtros div h4, .flex-acc .filtros div h3 {
         color: #86DEEC; }
     .flex-acc .filtros .fil-1 {
       display: flex;
@@ -166,15 +171,15 @@ main {
       gap: 0.625rem; }
   .flex-acc .section-acc {
     display: grid;
-    width: 100%;
     row-gap: .625rem;
     margin: .625rem;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     justify-items: center;
-    justify-content: center; }
+    justify-content: center;
+    width: 100%; }
     .flex-acc .section-acc button {
-      background-color: #212121;
+      background-color: #131313;
       border: none; }
       .flex-acc .section-acc button a {
         text-decoration: none;
@@ -182,16 +187,18 @@ main {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: 0rem;
         border-radius: 10%;
         overflow: hidden;
         background-color: #B9B9B9;
-        border: 2px solid #86DEEC; }
+        border: 2px solid #86DEEC;
+        width: 100%;
+        height: 100%; }
         .flex-acc .section-acc button a img {
           width: 11.25rem;
-          object-fit: contain; }
+          object-fit: cover; }
 
 .glr-flex {
   display: flex;
@@ -213,18 +220,17 @@ main {
     align-items: center;
     justify-content: center;
     align-content: stretch; }
-    .glr-flex .glr-grid .glr {
+    .glr-flex .glr-grid .div-glr {
       width: 100%;
       height: 100%;
-      object-fit: cover; }
-    .glr-flex .glr-grid .glr-1:hover, .glr-flex .glr-grid .glr-3:hover, .glr-flex .glr-grid .glr-5:hover, .glr-flex .glr-grid .glr-7:hover {
-      transform: scale(1.2, 1.2);
-      transform-origin: top left;
-      transition: transform 0.5s; }
-    .glr-flex .glr-grid .glr-2:hover, .glr-flex .glr-grid .glr-4:hover, .glr-flex .glr-grid .glr-8:hover {
-      transform: scale(1.2, 1.2);
-      transform-origin: top right;
-      transition: transform 0.5s; }
+      overflow: hidden; }
+      .glr-flex .glr-grid .div-glr .glr {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+        .glr-flex .glr-grid .div-glr .glr:hover {
+          transform: scale(1.2, 1.2);
+          transition: transform 0.5s; }
     .glr-flex .glr-grid .glr-1 {
       grid-area: item1; }
     .glr-flex .glr-grid .glr-2 {
@@ -259,19 +265,22 @@ main {
       border: 2px solid #86DEEC;
       margin-top: .625rem;
       margin-bottom: .625rem; }
-      .div-info .section-info div p {
+      .div-info .section-info div p, .div-info .section-info div .main-404 .div-404 .text .txt, .main-404 .div-404 .text .div-info .section-info div .txt {
         margin: 20px 10px 10px 10px; }
-        .div-info .section-info div p a {
+        .div-info .section-info div p a, .div-info .section-info div .main-404 .div-404 .text .txt a, .main-404 .div-404 .text .div-info .section-info div .txt a {
           color: #86DEEC; }
 
 main .section-product {
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  justify-content: center; }
   main .section-product .section-img {
-    background-color: #212121;
+    background-color: #131313;
     padding: 1.25rem 4.375rem;
     margin-top: 3.125rem;
+    margin-left: 10%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -284,44 +293,59 @@ main .section-product {
       align-items: center;
       gap: 0px;
       padding: 1.875rem; }
-      main .section-product .section-img .article-h1 h1, main .section-product .section-img .article-h1 p {
+      main .section-product .section-img .article-h1 h1, main .section-product .section-img .article-h1 .main-404 .div-404 .text p, .main-404 .div-404 .text main .section-product .section-img .article-h1 p, main .section-product .section-img .article-h1 .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .section-product .section-img .article-h1 .txt, main .section-product .section-img .article-h1 p, main .section-product .section-img .article-h1 .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .section-product .section-img .article-h1 .txt {
         color: #86DEEC;
         font-size: 1.7rem; }
     main .section-product .section-img .potato img {
       width: 43.75rem;
       border: 2px solid #86DEEC; }
-  main .section-product .section-compra .div-talle {
-    border: 2px solid #86DEEC;
-    background-color: #212121;
-    height: 23rem;
-    width: 15.325rem;
+  main .section-product .section-compra {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10%; }
-    main .section-product .section-compra .div-talle ul h3 {
-      font-size: 1.5rem;
-      color: #86DEEC; }
-    main .section-product .section-compra .div-talle ul button {
-      border: 1px solid #86DEEC;
-      padding: .3125rem;
-      background-color: #212121;
-      border-radius: .3125rem; }
-      main .section-product .section-compra .div-talle ul button a {
-        text-decoration: none;
+    gap: 1.875rem;
+    margin-top: 3.125rem; }
+    main .section-product .section-compra .div-talle, main .section-product .section-compra .historia {
+      border: 2px solid #86DEEC;
+      background-color: #131313;
+      height: 23rem;
+      width: 15.325rem;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10%; }
+      main .section-product .section-compra .div-talle ul h3, main .section-product .section-compra .historia ul h3 {
+        font-size: 1.5rem;
         color: #86DEEC; }
-    main .section-product .section-compra .div-talle .button-compra {
-      border: 1px solid #86DEEC;
-      padding: .3125rem;
-      background-color: #212121;
-      border-radius: .3125rem; }
-      main .section-product .section-compra .div-talle .button-compra a {
-        text-decoration: none;
+      main .section-product .section-compra .div-talle ul button, main .section-product .section-compra .historia ul button {
+        border: 1px solid #86DEEC;
+        padding: .3125rem;
+        background-color: #131313;
+        border-radius: .3125rem; }
+        main .section-product .section-compra .div-talle ul button a, main .section-product .section-compra .historia ul button a {
+          text-decoration: none;
+          color: #86DEEC; }
+      main .section-product .section-compra .div-talle .button-compra, main .section-product .section-compra .historia .button-compra {
+        border: 1px solid #86DEEC;
+        padding: .3125rem;
+        background-color: #131313;
+        border-radius: .3125rem; }
+        main .section-product .section-compra .div-talle .button-compra a, main .section-product .section-compra .historia .button-compra a {
+          text-decoration: none;
+          color: #86DEEC; }
+      main .section-product .section-compra .div-talle h5, main .section-product .section-compra .historia h5, main .section-product .section-compra .div-talle h6, main .section-product .section-compra .historia h6 {
         color: #86DEEC; }
-    main .section-product .section-compra .div-talle h5, main .section-product .section-compra .div-talle h6 {
+    main .section-product .section-compra .historia {
+      width: 20rem;
       color: #86DEEC; }
+      main .section-product .section-compra .historia p, main .section-product .section-compra .historia .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .section-product .section-compra .historia .txt {
+        overflow: auto;
+        font-size: 1.3rem;
+        margin: 10px; }
 
 main .mas-productos {
   display: flex;
@@ -348,8 +372,8 @@ main .mas-productos {
       align-items: center;
       border-radius: 10%;
       overflow: hidden;
-      background-color: #B9B9B9; }
-      main .mas-productos .section-mas button h3, main .mas-productos .section-mas button p {
+      background-color: #131313; }
+      main .mas-productos .section-mas button h3, main .mas-productos .section-mas button p, main .mas-productos .section-mas button .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .mas-productos .section-mas button .txt {
         color: black;
         text-decoration: none; }
       main .mas-productos .section-mas button img {
@@ -357,9 +381,84 @@ main .mas-productos {
         height: 18rem;
         object-fit: cover; }
 
+.main-404 .div-404 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0rem;
+  height: 90vh; }
+  .main-404 .div-404 .text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem; }
+    .main-404 .div-404 .text .gif-1 {
+      display: none; }
+    .main-404 .div-404 .text h1, .main-404 .div-404 .text p, .main-404 .div-404 .text .txt {
+      color: #86DEEC;
+      text-align: center;
+      font-size: 4rem; }
+    .main-404 .div-404 .text p, .main-404 .div-404 .text .txt {
+      font-size: 2rem; }
+    .main-404 .div-404 .text .txt {
+      width: 37.5rem; }
+      .main-404 .div-404 .text .txt::after {
+        content: " inicio"; }
+    .main-404 .div-404 .text .buttoncito {
+      position: relative;
+      width: 200px;
+      height: 70px;
+      border-radius: 20px;
+      z-index: 1111;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .main-404 .div-404 .text .buttoncito .bg {
+        position: absolute;
+        width: 190px;
+        height: 60px;
+        z-index: 2;
+        background: #131313;
+        backdrop-filter: blur(24px);
+        border-radius: 17px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+      .main-404 .div-404 .text .buttoncito .blob {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        width: 150px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #86DEEC;
+        opacity: 1;
+        filter: blur(2px);
+        animation: blob-bounce 3s infinite ease; }
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0); }
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0); }
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0); }
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0); }
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0); } }
+
 footer {
-  background-color: #212121;
-  margin-top: 1.875rem;
+  background-color: #131313;
+  margin-top: .625rem;
   font-family: 'Lato', sans-serif;
   border: 0.125rem solid #86DEEC; }
   footer .section-redes {
@@ -367,6 +466,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
+    margin-top: .9375rem;
     gap: 9.375rem; }
     footer .section-redes .ul-redes {
       display: flex;
@@ -393,11 +493,12 @@ footer {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-right: 0.625rem; }
+      margin-right: 0.625rem;
+      padding: 20px 0px 20px 0px; }
       footer .section-redes .ul-lista a {
         text-decoration: none;
         color: #86DEEC;
-        font-size: 1rem; }
+        font-size: 14px; }
 
 @media (max-width: 1280px) {
   header nav .section-superior .logo img {
@@ -409,24 +510,34 @@ footer {
     margin-bottom: 1.25rem;
     justify-content: space-around;
     grid-template-columns: 200px 200px;
-    grid-template-areas: "item1 item2" "item3 item4" "item5 item6" "item7 item8" "item9 item10" "item11 item12" "item13 item14" "item15 item16"; }
+    grid-template-areas: "item0 item0" "item1 item2" "item3 item4" "item5 item6" "item7 item8" "item9 item10" "item11 item12" "item13 item14" "item15 item16"; }
   main .mas-productos .section-mas .mas-4 {
     display: none; }
   main .flex-acc .section-acc {
-    grid-template-columns: repeat(4, 1fr); } }
-
-@media (max-width: 1100px) {
+    grid-template-columns: repeat(4, 1fr); }
   main .section-product .section-img {
-    padding: .625rem; }
+    padding: 1.25rem; } }
+
+@media (max-width: 1190px) {
+  main .section-product .section-img {
+    padding: .625rem;
+    margin-left: 0px; }
     main .section-product .section-img .potato img {
       width: 37.5rem; }
   main .mas-productos .section-mas button img {
     width: 15.625rem;
-    height: 15.625rem; } }
+    height: 15.625rem; }
+  .main-404 .div-404 .gif-2 {
+    display: none; }
+  .main-404 .div-404 .text {
+    gap: 0px;
+    width: 100%; }
+    .main-404 .div-404 .text .gif-1 {
+      display: block; } }
 
 @media (max-width: 991px) {
   .header-encabezado {
-    margin-bottom: 1.5rem; }
+    margin-bottom: .625rem; }
     .header-encabezado nav {
       display: flex;
       flex-direction: row;
@@ -459,11 +570,11 @@ footer {
     padding: 1px; }
     main .section-product .section-img .potato img {
       width: 31.25rem; }
-  main .section-product .section-compra .div-talle {
+  main .section-product .section-compra .div-talle, main .section-product .section-compra .historia {
     width: 13.75rem; }
-    main .section-product .section-compra .div-talle button a, main .section-product .section-compra .div-talle h5, main .section-product .section-compra .div-talle h6 {
+    main .section-product .section-compra .div-talle button a, main .section-product .section-compra .historia button a, main .section-product .section-compra .div-talle h5, main .section-product .section-compra .historia h5, main .section-product .section-compra .div-talle h6, main .section-product .section-compra .historia h6 {
       font-size: 1rem; }
-    main .section-product .section-compra .div-talle ul h3, main .section-product .section-compra .div-talle ul button a {
+    main .section-product .section-compra .div-talle ul h3, main .section-product .section-compra .historia ul h3, main .section-product .section-compra .div-talle ul button a, main .section-product .section-compra .historia ul button a {
       font-size: 1rem; }
   main .mas-productos .section-mas .mas3 {
     display: none; }
@@ -479,7 +590,7 @@ footer {
     grid-template-columns: 1fr;
     column-gap: 20px; }
   footer {
-    margin-top: 1.5rem; }
+    margin-top: .625rem; }
     footer .section-redes {
       gap: 0rem; } }
 
@@ -490,24 +601,17 @@ footer {
     grid-template-columns: 1fr;
     grid-template-areas: "item1" "item2" "item3" "item4" "item5" "item7" "item8"; }
     main .glr-flex .glr-grid .glr-6 {
-      display: none; }
-    main .glr-flex .glr-grid .glr-1:hover, main .glr-flex .glr-grid .glr-3:hover, main .glr-flex .glr-grid .glr-5:hover, main .glr-flex .glr-grid .glr-7:hover {
-      transform: scale(1, 1);
-      transform-origin: top left;
-      transition: transform 0.5s; }
-    main .glr-flex .glr-grid .glr-2:hover, main .glr-flex .glr-grid .glr-4:hover, main .glr-flex .glr-grid .glr-8:hover {
-      transform: scale(1, 1);
-      transform-origin: top right;
-      transition: transform 0.5s; } }
+      display: none; } }
 
 @media (max-width: 730px) {
   main .section-product {
+    display: flex;
     flex-direction: column;
     gap: 32px; }
     main .section-product .section-img .potato img {
       width: 25rem;
       margin-bottom: .625rem; }
-    main .section-product .section-compra .div-talle {
+    main .section-product .section-compra .div-talle, main .section-product .section-compra .historia {
       height: 12.5rem;
       gap: 0rem; }
   main .mas-productos {
@@ -534,9 +638,11 @@ footer {
       main .div-flex .section-1 div a .item-img {
         width: 22rem;
         height: 22rem; }
+    main .div-flex .section-1 .item0 {
+      display: none; }
     main .div-flex .section-1 .item2, main .div-flex .section-1 .item14 {
       display: none; }
-    main .div-flex .section-1 .item8 a p {
+    main .div-flex .section-1 .item8 a p, main .div-flex .section-1 .item8 a .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .div-flex .section-1 .item8 a .txt {
       width: 15rem;
       height: 18.75rem;
       margin: .625rem; }
@@ -551,7 +657,17 @@ footer {
     footer .section-redes .ul-lista {
       display: none; }
   main .flex-acc .section-acc {
-    grid-template-columns: repeat(2, 13.75rem); } }
+    grid-template-columns: repeat(2, 13.75rem); }
+  .main-404 .div-404 {
+    height: 110vh; }
+    .main-404 .div-404 .text .gif-1 {
+      width: 25rem; }
+    .main-404 .div-404 .text p, .main-404 .div-404 .text .txt {
+      width: 18.75rem; }
+    .main-404 .div-404 .text .txt {
+      margin-bottom: .625rem; }
+      .main-404 .div-404 .text .txt::after {
+        content: none; } }
 
 @media (max-width: 450px) {
   .header-encabezado {
@@ -565,7 +681,18 @@ footer {
       width: 22rem;
       height: 22rem; }
   main .flex-acc .section-acc {
-    grid-template-columns: 13.75rem; }
+    grid-template-columns: repeat(2, 0.8fr);
+    margin: .625rem 0px .625rem 0px; }
+    main .flex-acc .section-acc button {
+      width: 150px;
+      height: 190px; }
+      main .flex-acc .section-acc button .a-a {
+        gap: 2%; }
+        main .flex-acc .section-acc button .a-a img {
+          width: 9.375rem;
+          height: 150px; }
+        main .flex-acc .section-acc button .a-a h3, main .flex-acc .section-acc button .a-a p, main .flex-acc .section-acc button .a-a .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .flex-acc .section-acc button .a-a .txt {
+          font-size: 10px; }
   main .mas-productos .section-mas button a img {
     width: 12.5rem;
     height: 12.5rem; }
@@ -578,7 +705,9 @@ footer {
       width: 3.75rem; }
   main .div-info .section-info div {
     width: 15.625rem;
-    height: 20rem; } }
+    height: 20rem; }
+  .main-404 .div-404 .text .gif-1 {
+    width: 18.75rem; } }
 
 @media (max-width: 376px) {
   main .div-flex .section-1 div {
@@ -591,9 +720,9 @@ footer {
     width: 15.625rem; } }
 
 @media (max-width: 360px) {
-  main .div-flex .section-1 div {
+  main .div-flex .section-1 .card {
     width: 18rem;
     height: 21.25rem; }
-    main .div-flex .section-1 div a .item-img {
+    main .div-flex .section-1 .card .a-a .item-img {
       width: 18rem;
       height: 18rem; } }
