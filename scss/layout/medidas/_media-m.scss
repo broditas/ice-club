@@ -49,7 +49,7 @@
     main{ 
         .section-product{
             .section-img{
-                padding: 1px;
+                padding: .0625rem;
                 .potato{
                     img{
                         width: 31.25rem;
@@ -101,7 +101,7 @@
             .section-info{
                 display: grid;
                 grid-template-columns:1fr;
-                column-gap: 20px;
+                column-gap: 1.25rem;
             }
         }
     }
@@ -141,7 +141,7 @@
         .section-product{
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 2rem;
             .section-img{
                 .potato{
                     img{
@@ -195,7 +195,7 @@
                 column-gap: 0px;
                 justify-content: space-around;
                 display: grid;
-                grid-template-columns:200px;
+                grid-template-columns: 12.5rem;
                 grid-template-areas:
                 "item1"
                 "item2"

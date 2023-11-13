@@ -27,17 +27,18 @@
             .section-acc{
                 grid-template-columns:repeat(2,0.8fr);
                 margin: .625rem 0px .625rem 0px;
+                width: 100%;
                 button{
-                    width: 150px;
-                    height: 190px;
+                    width: 9.375rem;
+                    height: 11.875rem;
                     .a-a{
                         gap: 2%;
                         img{
                             width: 9.375rem;
-                            height: 150px;
+                            height: 9.375rem;
                         }
                         h3,p{
-                            font-size: 10px;
+                            font-size: .625rem;
                         }
                     }
                 }
@@ -83,7 +84,7 @@
     main{
         .div-info{
             .section-info{
-                div{
+                .info{
                     width: 15.625rem;
                     height: 20rem;
                 }

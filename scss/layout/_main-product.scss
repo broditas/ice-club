@@ -36,7 +36,7 @@ main{
                 border:$border;
                 background-color: map-get($color, negrito);
                 height: 23rem;
-                width: 15.325rem;
+                width: 20rem;
                 @include flex(column,wrap,center,center,10%);
                 ul{
                     h3{
@@ -75,7 +75,7 @@ main{
                 p{
                     overflow: auto;
                     font-size: 1.3rem;
-                    margin: 10px
+                    margin: .625rem;
                 }
             }
         }
@@ -90,7 +90,10 @@ main{
             @include flex(row,wrap,space-evenly,flex-start,1.875rem);
             margin-bottom: 1.875rem;
             button{
+                box-shadow: $shadow;
+                @include neon;
                 @include boton;
+                background-color: map-get($color, gris);
                 h3,p{
                     color: black;
                     text-decoration: none;

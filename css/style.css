@@ -89,7 +89,7 @@ main {
       grid-template-areas: "item0 item0 item0" "item1 item2 item3" "item4 item5 item6" "item7 item8 item9" "item10 item11 item12" "item13 item14 item15" "item16 item17 item18"; }
       main .div-flex .section-1 .item0 {
         grid-area: item0;
-        max-width: 100%;
+        width: 100%;
         height: auto; }
       main .div-flex .section-1 .video, main .div-flex .section-1 .card {
         border: 2px solid #86DEEC;
@@ -101,7 +101,7 @@ main {
           box-shadow: 0 0 5px #47b7b7, 0 0 25px #47b7b7, 0 0 50px #47b7b7, 0 0 100px #47b7b7;
           transition: box-shadow .3s; }
       main .div-flex .section-1 .card {
-        width: 350px;
+        width: 21.875rem;
         height: 26.25rem;
         overflow: hidden;
         background-color: #B9B9B9; }
@@ -141,18 +141,18 @@ main {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: normal;
   gap: 0rem; }
   .flex-acc .filtros {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
     gap: 1.25rem;
     border: 2px solid #86DEEC;
     padding: 1.25rem;
-    margin: 1.25rem; }
+    margin: 1rem; }
     .flex-acc .filtros div {
       display: flex;
       flex-direction: row;
@@ -254,21 +254,28 @@ main {
   .div-info .section-info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.25rem; }
-    .div-info .section-info div {
-      background-color: #212121;
+    column-gap: 1.25rem;
+    row-gap: 1.25rem; }
+    .div-info .section-info .info {
+      background-color: #131313;
       width: 25rem;
-      height: 26.25rem;
+      height: 25rem;
       text-align: center;
       border-radius: 20%;
       color: #86DEEC;
       border: 2px solid #86DEEC;
       margin-top: .625rem;
-      margin-bottom: .625rem; }
-      .div-info .section-info div p, .div-info .section-info div .main-404 .div-404 .text .txt, .main-404 .div-404 .text .div-info .section-info div .txt {
-        margin: 20px 10px 10px 10px; }
-        .div-info .section-info div p a, .div-info .section-info div .main-404 .div-404 .text .txt a, .main-404 .div-404 .text .div-info .section-info div .txt a {
+      margin-bottom: .625rem;
+      overflow: hidden; }
+      .div-info .section-info .info h4 {
+        margin-top: 1.25rem; }
+      .div-info .section-info .info p, .div-info .section-info .info .main-404 .div-404 .text .txt, .main-404 .div-404 .text .div-info .section-info .info .txt {
+        margin: 1.25rem .625rem .625rem .625rem; }
+        .div-info .section-info .info p a, .div-info .section-info .info .main-404 .div-404 .text .txt a, .main-404 .div-404 .text .div-info .section-info .info .txt a {
           color: #86DEEC; }
+    .div-info .section-info form {
+      margin-top: .625rem;
+      margin-bottom: 1.25rem; }
 
 main .section-product {
   display: grid;
@@ -311,7 +318,7 @@ main .section-product {
       border: 2px solid #86DEEC;
       background-color: #131313;
       height: 23rem;
-      width: 15.325rem;
+      width: 20rem;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
@@ -345,7 +352,7 @@ main .section-product {
       main .section-product .section-compra .historia p, main .section-product .section-compra .historia .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .section-product .section-compra .historia .txt {
         overflow: auto;
         font-size: 1.3rem;
-        margin: 10px; }
+        margin: .625rem; }
 
 main .mas-productos {
   display: flex;
@@ -366,13 +373,18 @@ main .mas-productos {
     gap: 1.875rem;
     margin-bottom: 1.875rem; }
     main .mas-productos .section-mas button {
+      box-shadow: 11px 11px 22px #121212, -11px -11px 22px rgba(71, 183, 183, 0.347);
       border: 2px solid #86DEEC;
       display: flex;
       flex-direction: column;
       align-items: center;
       border-radius: 10%;
       overflow: hidden;
-      background-color: #131313; }
+      background-color: #131313;
+      background-color: #B9B9B9; }
+      main .mas-productos .section-mas button:hover {
+        box-shadow: 0 0 5px #47b7b7, 0 0 25px #47b7b7, 0 0 50px #47b7b7, 0 0 100px #47b7b7;
+        transition: box-shadow .3s; }
       main .mas-productos .section-mas button h3, main .mas-productos .section-mas button p, main .mas-productos .section-mas button .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .mas-productos .section-mas button .txt {
         color: black;
         text-decoration: none; }
@@ -410,9 +422,9 @@ main .mas-productos {
         content: " inicio"; }
     .main-404 .div-404 .text .buttoncito {
       position: relative;
-      width: 200px;
-      height: 70px;
-      border-radius: 20px;
+      width: 12.5rem;
+      height: 4.375rem;
+      border-radius: 1.25rem;
       z-index: 1111;
       overflow: hidden;
       display: flex;
@@ -421,12 +433,12 @@ main .mas-productos {
       justify-content: center; }
       .main-404 .div-404 .text .buttoncito .bg {
         position: absolute;
-        width: 190px;
-        height: 60px;
+        width: 11.875rem;
+        height: 3.75rem;
         z-index: 2;
         background: #131313;
         backdrop-filter: blur(24px);
-        border-radius: 17px;
+        border-radius: 1.0625rem;
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -436,8 +448,8 @@ main .mas-productos {
         z-index: 1;
         top: 50%;
         left: 50%;
-        width: 150px;
-        height: 60px;
+        width: 9.375rem;
+        height: 3.75rem;
         border-radius: 50%;
         background-color: #86DEEC;
         opacity: 1;
@@ -482,8 +494,8 @@ footer {
           font-size: 1rem;
           width: 100px; }
           footer .section-redes .ul-redes li a img {
-            width: 25px;
-            height: 25px; }
+            width: 1.5625rem;
+            height: 1.5625rem; }
       footer .section-redes .ul-redes .li-discord a img {
         border-radius: 100%; }
     footer .section-redes .logo-footer a img {
@@ -494,11 +506,11 @@ footer {
       flex-direction: column;
       align-items: flex-start;
       margin-right: 0.625rem;
-      padding: 20px 0px 20px 0px; }
+      padding: 1.25rem 0rem 1.25rem 0rem; }
       footer .section-redes .ul-lista a {
         text-decoration: none;
         color: #86DEEC;
-        font-size: 14px; }
+        font-size: .875rem; }
 
 @media (max-width: 1280px) {
   header nav .section-superior .logo img {
@@ -509,7 +521,7 @@ footer {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     justify-content: space-around;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 12.5rem 12.5rem;
     grid-template-areas: "item0 item0" "item1 item2" "item3 item4" "item5 item6" "item7 item8" "item9 item10" "item11 item12" "item13 item14" "item15 item16"; }
   main .mas-productos .section-mas .mas-4 {
     display: none; }
@@ -567,7 +579,7 @@ footer {
           .header-encabezado nav .menu ul li a {
             font-size: 1.875rem; }
   main .section-product .section-img {
-    padding: 1px; }
+    padding: .0625rem; }
     main .section-product .section-img .potato img {
       width: 31.25rem; }
   main .section-product .section-compra .div-talle, main .section-product .section-compra .historia {
@@ -588,7 +600,7 @@ footer {
   main .div-info .section-info {
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 20px; }
+    column-gap: 1.25rem; }
   footer {
     margin-top: .625rem; }
     footer .section-redes {
@@ -607,7 +619,7 @@ footer {
   main .section-product {
     display: flex;
     flex-direction: column;
-    gap: 32px; }
+    gap: 2rem; }
     main .section-product .section-img .potato img {
       width: 25rem;
       margin-bottom: .625rem; }
@@ -630,7 +642,7 @@ footer {
     column-gap: 0px;
     justify-content: space-around;
     display: grid;
-    grid-template-columns: 200px;
+    grid-template-columns: 12.5rem;
     grid-template-areas: "item1" "item2" "item3" "item4" "item5" "item6" "item7" "item8" "item9" "item10" "item11" "item12" "item13" "item14"; }
     main .div-flex .section-1 div {
       width: 22rem;
@@ -682,17 +694,18 @@ footer {
       height: 22rem; }
   main .flex-acc .section-acc {
     grid-template-columns: repeat(2, 0.8fr);
-    margin: .625rem 0px .625rem 0px; }
+    margin: .625rem 0px .625rem 0px;
+    width: 100%; }
     main .flex-acc .section-acc button {
-      width: 150px;
-      height: 190px; }
+      width: 9.375rem;
+      height: 11.875rem; }
       main .flex-acc .section-acc button .a-a {
         gap: 2%; }
         main .flex-acc .section-acc button .a-a img {
           width: 9.375rem;
-          height: 150px; }
+          height: 9.375rem; }
         main .flex-acc .section-acc button .a-a h3, main .flex-acc .section-acc button .a-a p, main .flex-acc .section-acc button .a-a .main-404 .div-404 .text .txt, .main-404 .div-404 .text main .flex-acc .section-acc button .a-a .txt {
-          font-size: 10px; }
+          font-size: .625rem; }
   main .mas-productos .section-mas button a img {
     width: 12.5rem;
     height: 12.5rem; }
@@ -703,7 +716,7 @@ footer {
       height: 1rem; }
     footer .section-redes .logo-footer a img {
       width: 3.75rem; }
-  main .div-info .section-info div {
+  main .div-info .section-info .info {
     width: 15.625rem;
     height: 20rem; }
   .main-404 .div-404 .text .gif-1 {
