@@ -11,9 +11,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
         
-        /* Nuevo estilo para el fondo de la página */
         .page-bg {
-            background-image: url(./assets/FLYERVR.jpeg); /* Ruta de la imagen proporcionada */
+            background-image: url(./assets/FLYERVR.jpeg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -22,54 +21,51 @@
 
         body { 
             font-family: 'Plus+Jakarta+Sans', sans-serif; 
-            background-color: transparent; /* Fondo transparente para mostrar la imagen */
         }
         
-        /* Ajuste de transparencia para el contenedor principal para que se vea el fondo */
         #app {
-            background-color: rgba(255, 255, 255, 0.8); /* Blanco semi-transparente */
-            backdrop-filter: blur(10px); /* Ligero desenfoque para legibilidad */
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
         }
 
         .option-btn { transition: all 0.2s ease; border: 1px solid #f1f5f9; cursor: pointer; }
-        .option-btn:hover { border-color: #0669b1; background-color: rgba(0, 110, 255, 0.14); }
+        .option-btn:hover { border-color: #0669b1; background-color: rgba(39, 133, 255, 0.1); }
         .fade-in { animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        #chart-container { width: 100%; height: 260px; margin: 0 auto; }
-        #qrcode img { margin: 0 auto; border: 12px solid white; border-radius: 1.5rem; shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        #chart-container { width: 100%; height: 220px; margin: 0 auto; }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 text-gray-900 page-bg">
 
     <div id="app" class="max-w-xl w-full rounded-[2.5rem] shadow-2xl overflow-hidden border border-gray-100/50">
         
-        <div class="px-8 pt-8 pb-4">
+        <div class="px-8 pt-8 pb-1">
             <div class="flex justify-between items-end mb-4">
                 <h1 class="text-xl font-extrabold text-gray-900 tracking-tight">Test Vocacional Pilar</h1>
-                <span id="step-counter" class="text-[10px] font-bold text-blue-800 bg-blue-50/90 px-3 py-1 rounded-full uppercase tracking-widest italic">Inicio</span>
+                <span id="step-counter" class="text-[10px] font-bold text-blue-600 bg-blue-50/90 px-3 py-1 rounded-full uppercase tracking-widest italic">Inicio</span>
             </div>
             <div class="h-1.5 w-full bg-gray-100/50 rounded-full overflow-hidden">
-                <div id="progress-bar" class="h-full bg-blue-800 transition-all duration-500" style="width: 0%"></div>
+                <div id="progress-bar" class="h-full bg-blue-600 transition-all duration-500" style="width: 0%"></div>
             </div>
         </div>
 
-        <div class="p-8">
+        <div class="px-10 pb-10">
             <div id="start-view" class="fade-in text-center">
-                <div class="mb-6 inline-block p-4 bg-indigo-50/90 rounded-3xl text-4xl">🚀</div>
+                <div class="mb-2 inline-block p-4 bg-indigo rounded-3xl text-4xl"><img src="./assets/LOGOMUNI.png" width="150" alt=""></div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-3">Tu Futuro en Pilar</h2>
-                <p class="text-gray-500 text-sm mb-8 leading-relaxed">Descubrí tu perfil profesional ideal mediante este análisis de aptitudes tecnológicas.</p>
-                <button onclick="startTest()" class="w-full bg-blue-800 text-white font-bold py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-lg">Comenzar Test</button>
+                <p class="text-gray-500 text-sm mb-8 leading-relaxed">Descubrí tu perfil tecnológico ideal en pocos pasos.</p>
+                <button onclick="startTest()" class="w-full bg-blue-600 text-white font-bold py-4 rounded-2xl hover:bg-blue-700 transition-all shadow-lg">Comenzar</button>
             </div>
 
             <div id="question-view" class="hidden fade-in">
-                <h2 id="question-text" class="text-lg font-bold text-gray-800 mb-6 leading-tight min-h-[3.5rem]"></h2>
+                <h2 id="question-text" class="text-lg font-bold text-gray-800 mb-6 leading-tight min-h-[.5rem] pt-[1rem]"></h2>
                 <div id="options-container" class="space-y-3"></div>
             </div>
 
             <div id="result-view" class="hidden fade-in">
                 <div class="text-center mb-4">
-                    <h2 class="text-2xl font-black text-gray-900 mb-1">Tu Perfil Profesional</h2>
-                    <p class="text-[10px] font-bold text-blue-800 uppercase tracking-[0.2em]">Dimensiones de Aptitud</p>
+                    <h2 class="text-2xl font-black text-gray-900 mb-1 pt-2">Tu Perfil</h2>
+                    <p class="text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em]">Aptitudes Detectadas</p>
                 </div>
                 
                 <div class="bg-gray-50/90 rounded-[2rem] p-6 mb-6 border border-gray-100/50">
@@ -77,58 +73,52 @@
                 </div>
 
                 <div class="space-y-4 mb-6">
-                    <div class="bg-blue-800 rounded-3xl p-6 text-white shadow-xl">
-                        <p class="text-[10px] font-bold uppercase mb-1 opacity-70 italic tracking-widest">Opción Principal</p>
-                        <p id="career-1" class="text-xl font-bold mb-2"></p>
-                        <p id="desc-1" class="text-xs opacity-90 italic border-l-2 border-white/30 pl-3 mb-3"></p>
+                    <div class="bg-blue-600 rounded-3xl p-6 text-white shadow-xl">
+                        <p class="text-[10px] font-bold uppercase mb-1 opacity-70 tracking-widest">Análisis</p>
+                        <p id="career-1" class="text-xl font-bold mb-1"></p>
+                        <p id="desc-1" class="text-xs leading-snug opacity-95 border-l-2 border-white/30 pl-3 mb-4"></p>
                         <div class="pt-3 border-t border-white/10">
-                            <p class="text-[10px] font-bold uppercase mb-1">Dónde estudiar:</p>
+                            <p class="text-[10px] font-bold uppercase mb-1">Sede:</p>
                             <p id="uni-1" class="text-xs font-bold"></p>
                         </div>
                     </div>
 
-                    <div class="bg-indigo-50/90 rounded-3xl p-5 border border-indigo-100">
-                        <p class="text-[10px] font-bold text-indigo-400 uppercase mb-3 tracking-widest">Otras opciones compatibles</p>
-                        <div class="space-y-3">
-                            <div class="pb-2 border-b border-indigo-100">
-                                <p id="career-2" class="text-sm font-bold text-indigo-900"></p>
-                                <p id="uni-2" class="text-[10px] text-indigo-600 font-medium"></p>
+                    <div class="bg-blue-50/90 rounded-3xl p-5 border border-blue-100">
+                        <p class="text-[10px] font-bold text-blue-400 uppercase mb-3 tracking-widest">Otras opciones</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p id="career-2" class="text-sm font-bold text-blue-900"></p>
+                                <p id="uni-2" class="text-[10px] text-blue-600"></p>
                             </div>
                             <div>
                                 <p id="career-3" class="text-sm font-bold text-indigo-900"></p>
-                                <p id="uni-3" class="text-[10px] text-indigo-600 font-medium"></p>
+                                <p id="uni-3" class="text-[10px] text-blue-600"></p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 gap-3 mb-6">
-                    <button onclick="generatePDF()" class="w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition-all shadow-lg flex items-center justify-center gap-2">
-                        <span></span> Descargar Reporte PDF
-                    </button>
-                    <button onclick="showQR()" class="w-full bg-white border-2 border-gray-100 text-gray-700 font-bold py-4 rounded-2xl hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
-                        <span></span> Compartir Test (QR)
-                    </button>
-                    <button onclick="location.reload()" class="w-full text-gray-400 font-bold text-[10px] uppercase tracking-widest hover:text-blue-800 text-center mt-2">Reiniciar Test</button>
+                <div class="grid grid-cols-1 gap-3">
+                    <button onclick="generatePDF()" class="w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition-all">Descargar PDF</button>
+                    <button onclick="showQR()" class="w-full bg-white border-2 border-gray-100 text-gray-700 font-bold py-4 rounded-2xl">Compartir QR</button>
+                    <button onclick="location.reload()" class="w-full text-gray-400 font-bold text-[10px] uppercase tracking-widest mt-2">Reiniciar</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="qr-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-        <div class="bg-white rounded-[2.5rem] p-8 w-full max-w-sm text-center fade-in">
-            <h3 class="text-lg font-bold mb-2">¡Compartí el Test!</h3>
-            <p class="text-xs text-gray-500 mb-6 px-4">Escaneá este código para que otra persona pueda descubrir su futuro técnico.</p>
+        <div class="bg-white rounded-[2.5rem] p-8 w-full max-w-sm text-center">
+            <h3 class="text-lg font-bold mb-6">¡Compartilo!</h3>
             <div id="qrcode" class="mb-8 flex justify-center"></div>
-            <button onclick="document.getElementById('qr-modal').classList.add('hidden')" class="w-full bg-blue-800 text-white font-bold py-4 rounded-2xl shadow-lg">Cerrar</button>
+            <button onclick="document.getElementById('qr-modal').classList.add('hidden')" class="w-full bg-blue-800 text-white font-bold py-4 rounded-2xl">Cerrar</button>
         </div>
     </div>
 
     <script>
-        // Los datos de las preguntas y la lógica de puntuación siguen siendo los mismos que en el código anterior.
         const questions = [
             { q: " ¿Qué te resulta más interesante?", opts: ["Resolver problemas complejos", "Entender la naturaleza", "Crear videos o fotos", "Comunicar ideas", "Organizar procesos", "Enterder la creacion de paginas web"], vals: ["DS", "BIO", "AV", "CD", "PT", "PW"] },
-            { q: "Un colega dice que tu mayor virtud es que...", opts: ["Encontrás soluciones practicas", "Convertís ideas en algo visual", "Ves riesgos antes que nadie", "Busacas soluciones en base a tu curiosidad", "Mantenés al equipo enfocado", "Entendés de elemtentos tecnologicos"], vals: ["DS", "AV", "PW", "CD", "PT", "RC"] },
+            { q: "Un colega dice que tu mayor virtud es que...", opts: ["Encontrás soluciones practicas", "Convertís ideas en algo visual", "Ves riesgos antes que nadie", "Buscas soluciones en base a tu curiosidad", "Mantenés al equipo enfocado", "Entendés de elemtentos tecnologicos"], vals: ["DS", "AV", "PW", "CD", "PT", "RC"] },
             { q: "Si la tecnología fuera un deporte, sería...", opts: ["Ajedrez: estrategia pura, lógica y anticipación a varios movimientos", "Atletismo artístico: rendimiento técnico con expresión y estética", "Artes marciales: disciplina, defensa y contraataque preciso", "Fórmula 1: velocidad, infraestructura perfecta y mínimo margen de error", "Rugby: liderazgo, trabajo colectivo y pensamiento táctico de equipo", "Motocross: mecánica, adrenalina y dominio total del equipo físico"], vals: ["DS", "AV", "PW", "CD", "PT", "RC"] },
             { q: "¿Cómo preferís trabajar?", opts: ["Solo y concentrado", "En laboratorio", "En equipo creativo", "Comunicación constante", "Coordinando tareas", "Instalando equipos"], vals: ["DS", "BIO", "AV", "CD", "PT", "RC"] },
             { q: "¿Qué tipo de contenido consumís más?", opts: ["Programación", "Ciencia/Documentales", "Videos/Streaming", "Redes sociales", "Contenido organizativo", "Tutoriales técnicos"], vals: ["DS", "BIO", "AV", "CD", "PT", "RC"] },
@@ -145,14 +135,14 @@
         let topThree = [];
 
         const profileMap = {
-            DS: { career: "Desarrollo de Software", personality: "Mente lógica y resolutiva. Te apasiona crear soluciones.", unis: ["Universidad Nacional de Pilar (unpilar)"] },
-            BIO: { career: "Biotecnología", personality: "Perfil científico e investigador con interés en la vida y la ciencia.", unis: ["Universidad Nacional de Pilar (unpilar)"] },
-            AV: { career: "Realización Audiovisual", personality: "Perfil creativo y visual. Tenés talento para contar historias.", unis: ["Universidad Nacional de Pilar (unpilar)"] },
-            CD: { career: "Comunicación Digital", personality: "Estratega de medios y redes con gran capacidad comunicativa.", unis: ["Universidad Nacional de Pilar (unpilar)"] },
-            PT: { career: "Producción y Tecnología", personality: "Enfoque en la gestión y eficiencia de procesos industriales.", unis: ["Universidad Nacional de Pilar (unpilar)"] },
-            PW: { career: "Programación Web", personality: "Creador de experiencias digitales y sitios modernos.", unis: ["Curso Municipal Pilar"] },
-            OI: { career: "Operador de Informática", personality: "Experto en herramientas digitales y organización de oficina.", unis: ["Curso Municipal Pilar"] },
-            RC: { career: "Reparación de Celulares", personality: "Especialista técnico con gran habilidad para el hardware.", unis: ["Curso Municipal Pilar"] }
+            DS: { career: "Desarrollo de Software", unis: ["Universidad Nacional de Pilar (unpilar)"] },
+            BIO: { career: "Biotecnología", unis: ["Universidad Nacional de Pilar (unpilar)"] },
+            AV: { career: "Realización Audiovisual", unis: ["Universidad Nacional de Pilar (unpilar)"] },
+            CD: { career: "Comunicación Digital", unis: ["Universidad Nacional de Pilar (unpilar)"] },
+            PT: { career: "Producción y Tecnología", unis: ["Universidad Nacional de Pilar (unpilar)"] },
+            PW: { career: "Programación Web", unis: ["Curso Municipal Pilar"] },
+            OI: { career: "Operador de Informática", unis: ["Curso Municipal Pilar"] },
+            RC: { career: "Reparación de Celulares", unis: ["Curso Municipal Pilar"] }
         };
 
         function startTest() {
@@ -172,62 +162,59 @@
                 const btn = document.createElement('button');
                 btn.className = "option-btn w-full text-left p-4 rounded-2xl text-xs font-semibold bg-white border border-gray-100/50";
                 btn.innerText = opt;
-                btn.onclick = () => { scores[q.vals[i]]++; currentIdx++; if (currentIdx < questions.length) showQuestion(); else showResults(); };
+                btn.onclick = () => { 
+                    scores[q.vals[i]]++; 
+                    currentIdx++; 
+                    if (currentIdx < questions.length) showQuestion(); 
+                    else showResults(); 
+                };
                 container.appendChild(btn);
             });
+        }
+
+        function generateDynamicDescription(scores) {
+            const maxScore = Math.max(...Object.values(scores));
+            const topTraits = Object.keys(scores).filter(key => scores[key] === maxScore);
+            const traits = {
+                DS: "lógica aguda y resolución de problemas.",
+                BIO: "curiosidad científica y análisis biotecnológico.",
+                AV: "creatividad visual y talento narrativo.",
+                CD: "estrategia comunicativa y medios digitales.",
+                PT: "eficiencia y gestión de procesos.",
+                PW: "perfil de constructor web moderno.",
+                OI: "organización metódica y soporte IT.",
+                RC: "destreza técnica y hardware."
+            };
+            return "Tenés un perfil con " + (traits[topTraits[0]] || "habilidades técnicas.") + " Ideal para entornos que exigen soluciones reales.";
         }
 
         function showResults() {
             document.getElementById('question-view').classList.add('hidden');
             document.getElementById('result-view').classList.remove('hidden');
-            
             topThree = Object.entries(scores).sort((a,b) => b[1] - a[1]).slice(0, 3).map(item => profileMap[item[0]]);
-
             document.getElementById('career-1').innerText = topThree[0].career;
-            document.getElementById('desc-1').innerText = topThree[0].personality;
+            document.getElementById('desc-1').innerText = generateDynamicDescription(scores);
             document.getElementById('uni-1').innerText = topThree[0].unis[0];
             document.getElementById('career-2').innerText = "2° " + topThree[1].career;
             document.getElementById('uni-2').innerText = topThree[1].unis[0];
             document.getElementById('career-3').innerText = "3° " + topThree[2].career;
             document.getElementById('uni-3').innerText = topThree[2].unis[0];
             
-            const chartData = [scores.DS + scores.PW, scores.BIO, scores.AV, scores.CD, scores.PT + scores.OI + scores.RC];
             new Chart(document.getElementById('barChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['Lógica', 'Ciencia', 'Creatividad', 'Estrategia', 'Gestión'],
-                    datasets: [{ data: chartData, backgroundColor: ['#1e40af', '#2563eb', '#3b82f6', '#60a5fa', '#93c5fd'], borderRadius: 6 }]
+                    labels: ['Lógica', 'Ciencia', 'Creativ.', 'Estrat.', 'Gestión'],
+                    datasets: [{ data: [scores.DS + scores.PW, scores.BIO, scores.AV, scores.CD, scores.PT + scores.OI + scores.RC], backgroundColor: ['#1e40af', '#2563eb', '#3b82f6', '#60a5fa', '#93c5fd'], borderRadius: 6 }]
                 },
-                options: { 
-                    indexAxis: 'y', 
-                    animation: false, 
-                    plugins: { legend: { display: false } }, 
-                    scales: { 
-                        x: { display: false },
-                        y: { 
-                            ticks: {
-                                color: '#4b5563' // Gris oscuro para los labels del gráfico sobre fondo claro
-                            }
-                        }
-                    }, 
-                    maintainAspectRatio: false 
-                }
+                options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { display: false } }, maintainAspectRatio: false }
             });
         }
 
         function showQR() {
-            const modal = document.getElementById('qr-modal');
             const container = document.getElementById('qrcode');
             container.innerHTML = '';
-            new QRCode(container, {
-                text: window.location.href,
-                width: 180,
-                height: 180,
-                colorDark : "#1e40af",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.H
-            });
-            modal.classList.remove('hidden');
+            new QRCode(container, { text: window.location.href, width: 160, height: 160, colorDark : "#1e40af" });
+            document.getElementById('qr-modal').classList.remove('hidden');
         }
 
         async function generatePDF() {
