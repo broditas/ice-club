@@ -19,15 +19,8 @@
             background-attachment: fixed;
         }
 
-        body { 
-            font-family: 'Plus+Jakarta+Sans', sans-serif; 
-        }
-        
-        #app {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-        }
-
+        body { font-family: 'Plus+Jakarta+Sans', sans-serif; }
+        #app { background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
         .option-btn { transition: all 0.2s ease; border: 1px solid #f1f5f9; cursor: pointer; }
         .option-btn:hover { border-color: #0669b1; background-color: rgba(39, 133, 255, 0.1); }
         .fade-in { animation: fadeIn 0.4s ease-out; }
@@ -51,9 +44,9 @@
 
         <div class="px-10 pb-10">
             <div id="start-view" class="fade-in text-center">
-                <div class="mb-2 inline-block p-4 bg-indigo rounded-3xl text-4xl"><img src="./assets/LOGOMUNI.png" width="150" alt=""></div>
+                <div class="inline-block pt-4 bg-indigo rounded-3xl text-4xl"><img src="./assets/LOGOMUNI.png" width="150" alt=""></div>
                 <h2 class="text-2xl font-bold text-gray-900 mb-3">Tu Futuro en Pilar</h2>
-                <p class="text-gray-500 text-sm mb-8 leading-relaxed">Descubrí tu perfil tecnológico ideal en pocos pasos.</p>
+                <p class="text-gray-500 text-sm mb-8 leading-relaxed">Analizamos tus respuestas para encontrar tu camino en el mundo tech.</p>
                 <button onclick="startTest()" class="w-full bg-blue-600 text-white font-bold py-4 rounded-2xl hover:bg-blue-700 transition-all shadow-lg">Comenzar</button>
             </div>
 
@@ -64,43 +57,53 @@
 
             <div id="result-view" class="hidden fade-in">
                 <div class="text-center mb-4">
-                    <h2 class="text-2xl font-black text-gray-900 mb-1 pt-2">Tu Perfil</h2>
-                    <p class="text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em]">Aptitudes Detectadas</p>
+                    <h2 class="text-2xl font-black text-gray-900 mb-1 pt-2">Tu Perfil Tecnológico</h2>
                 </div>
                 
-                <div class="bg-gray-50/90 rounded-[2rem] p-6 mb-6 border border-gray-100/50">
-                    <div id="chart-container"><canvas id="barChart"></canvas></div>
-                </div>
-
                 <div class="space-y-4 mb-6">
+                    <div class="bg-gray-50/90 rounded-[2rem] p-6 border border-gray-100/50 shadow-sm">
+                        <p class="text-[10px] font-bold text-gray-400 uppercase mb-4 text-center tracking-widest">Distribución de Aptitudes</p>
+                        <div id="chart-container"><canvas id="barChart"></canvas></div>
+                    </div>
+
                     <div class="bg-blue-600 rounded-3xl p-6 text-white shadow-xl">
-                        <p class="text-[10px] font-bold uppercase mb-1 opacity-70 tracking-widest">Análisis</p>
-                        <p id="career-1" class="text-xl font-bold mb-1"></p>
-                        <p id="desc-1" class="text-xs leading-snug opacity-95 border-l-2 border-white/30 pl-3 mb-4"></p>
-                        <div class="pt-3 border-t border-white/10">
-                            <p class="text-[10px] font-bold uppercase mb-1">Sede:</p>
+                        <p class="text-[10px] font-bold uppercase mb-1 opacity-70 tracking-widest">Recomendación Principal</p>
+                        <p id="career-1" class="text-xl font-bold mb-3"></p>
+                        <div class="pt-3 border-t border-white/20">
+                            <p class="text-[10px] font-bold uppercase mb-1">Dónde cursar:</p>
                             <p id="uni-1" class="text-xs font-bold"></p>
                         </div>
                     </div>
 
+                    <div class="bg-white/90 rounded-3xl p-6 border border-blue-100 shadow-sm">
+                        <p class="text-[10px] font-bold text-blue-600 uppercase mb-2 tracking-widest">Análisis Técnico</p>
+                        <p id="desc-1" class="text-xs leading-relaxed text-gray-700"></p>
+                    </div>
+
                     <div class="bg-blue-50/90 rounded-3xl p-5 border border-blue-100">
-                        <p class="text-[10px] font-bold text-blue-400 uppercase mb-3 tracking-widest">Otras opciones</p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <p id="career-2" class="text-sm font-bold text-blue-900"></p>
-                                <p id="uni-2" class="text-[10px] text-blue-600"></p>
+                        <p class="text-[10px] font-bold text-blue-400 uppercase mb-3 tracking-widest">Otras Coincidencias</p>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="flex justify-between items-center bg-white/50 p-3 rounded-xl">
+                                <div>
+                                    <p id="career-2" class="text-sm font-bold text-blue-900"></p>
+                                    <p id="uni-2" class="text-[10px] text-blue-600"></p>
+                                </div>
+                                <span class="text-[10px] font-bold text-blue-300">#2</span>
                             </div>
-                            <div>
-                                <p id="career-3" class="text-sm font-bold text-indigo-900"></p>
-                                <p id="uni-3" class="text-[10px] text-blue-600"></p>
+                            <div class="flex justify-between items-center bg-white/50 p-3 rounded-xl">
+                                <div>
+                                    <p id="career-3" class="text-sm font-bold text-blue-900"></p>
+                                    <p id="uni-3" class="text-[10px] text-blue-600"></p>
+                                </div>
+                                <span class="text-[10px] font-bold text-blue-300">#3</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 gap-3">
-                    <button onclick="generatePDF()" class="w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition-all">Descargar PDF</button>
-                    <button onclick="showQR()" class="w-full bg-white border-2 border-gray-100 text-gray-700 font-bold py-4 rounded-2xl">Compartir QR</button>
+                    <button onclick="generatePDF()" class="w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition-all">Descargar Reporte PDF</button>
+                    <button onclick="showQR()" class="w-full bg-white border-2 border-gray-100 text-gray-700 font-bold py-4 rounded-2xl hover:bg-gray-50 transition-all">Compartir TEST</button>
                     <button onclick="location.reload()" class="w-full text-gray-400 font-bold text-[10px] uppercase tracking-widest mt-2">Reiniciar</button>
                 </div>
             </div>
@@ -108,30 +111,31 @@
     </div>
 
     <div id="qr-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-6">
-        <div class="bg-white rounded-[2.5rem] p-8 w-full max-w-sm text-center">
-            <h3 class="text-lg font-bold mb-6">¡Compartilo!</h3>
-            <div id="qrcode" class="mb-8 flex justify-center"></div>
-            <button onclick="document.getElementById('qr-modal').classList.add('hidden')" class="w-full bg-blue-800 text-white font-bold py-4 rounded-2xl">Cerrar</button>
+        <div class="bg-white rounded-[2.5rem] p-8 w-full max-w-sm text-center shadow-2xl fade-in">
+            <h3 class="text-lg font-bold mb-1">¡Invitá a tus amigos!</h3>
+            <p class="text-xs text-gray-500 mb-6">Escaneá el código para que otros hagan el test.</p>
+            <div id="qrcode" class="mb-8 flex justify-center p-4 bg-gray-50 rounded-2xl border border-gray-100"></div>
+            <button onclick="document.getElementById('qr-modal').classList.add('hidden')" class="w-full bg-blue-600 text-white font-bold py-4 rounded-2xl hover:bg-blue-700 transition-all shadow-lg">Cerrar</button>
         </div>
     </div>
 
     <script>
         const questions = [
-            { q: " ¿Qué te resulta más interesante?", opts: ["Resolver problemas complejos", "Entender la naturaleza", "Crear videos o fotos", "Comunicar ideas", "Organizar procesos", "Enterder la creacion de paginas web"], vals: ["DS", "BIO", "AV", "CD", "PT", "PW"] },
-            { q: "Un colega dice que tu mayor virtud es que...", opts: ["Encontrás soluciones practicas", "Convertís ideas en algo visual", "Ves riesgos antes que nadie", "Buscas soluciones en base a tu curiosidad", "Mantenés al equipo enfocado", "Entendés de elemtentos tecnologicos"], vals: ["DS", "AV", "PW", "CD", "PT", "RC"] },
-            { q: "Si la tecnología fuera un deporte, sería...", opts: ["Ajedrez: estrategia pura, lógica y anticipación a varios movimientos", "Atletismo artístico: rendimiento técnico con expresión y estética", "Artes marciales: disciplina, defensa y contraataque preciso", "Fórmula 1: velocidad, infraestructura perfecta y mínimo margen de error", "Rugby: liderazgo, trabajo colectivo y pensamiento táctico de equipo", "Motocross: mecánica, adrenalina y dominio total del equipo físico"], vals: ["DS", "AV", "PW", "CD", "PT", "RC"] },
-            { q: "¿Cómo preferís trabajar?", opts: ["Solo y concentrado", "En laboratorio", "En equipo creativo", "Comunicación constante", "Coordinando tareas", "Instalando equipos"], vals: ["DS", "BIO", "AV", "CD", "PT", "RC"] },
-            { q: "¿Qué tipo de contenido consumís más?", opts: ["Programación", "Ciencia/Documentales", "Videos/Streaming", "Redes sociales", "Contenido organizativo", "Tutoriales técnicos"], vals: ["DS", "BIO", "AV", "CD", "PT", "RC"] },
-            { q: "¿Qué te describiría mejor?", opts: ["Analítico", "Curioso", "Creativo", "Sociable", "Organizado", "Práctico"], vals: ["DS", "BIO", "AV", "CD", "PT", "OI"] },
-            { q: "¿Qué te gustaría aprender?", opts: ["Crear apps", "Biología", "Producción audiovisual", "Marketing digital", "Gestión de procesos", "Herramientas de oficina"], vals: ["DS", "BIO", "AV", "CD", "PT", "OI"] },
-            { q: "¿Qué te motiva más?", opts: ["Encontrar soluciones", "Descubrir cosas", "Expresarte", "Comunicar", "Lograr objetivos", "Soporte técnico"], vals: ["DS", "BIO", "AV", "CD", "PT", "OI"] },
-            { q: "¿Qué ambiente preferís?", opts: ["Silencioso", "Laboratorio", "Set creativo", "Dinámico", "Industrial", "Oficina"], vals: ["DS", "BIO", "AV", "CD", "PT", "OI"] },
-            { q: "¿Qué te resulta más fácil?", opts: ["Pensar soluciones", "Analizar información", "Crear contenido", "Hablar/Expresarte", "Planificar", "Optimizar software"], vals: ["DS", "BIO", "AV", "CD", "PT", "OI"] },
-            { q: "¿Qué te gustaría lograr?", opts: ["Desarrollar tecnología", "Aportar a la ciencia", "Crear audiovisual", "Comunicar", "Optimizar procesos", "Soporte informático"], vals: ["DS", "BIO", "AV", "CD", "PT", "OI"] }
+            { q: " ¿Qué te resulta más interesante?", opts: ["Resolver problemas complejos", "Entender la naturaleza", "Crear videos o fotos", "Comunicar ideas", "Organizar procesos", "Proteger información y detectar riesgos"], vals: ["DS", "BIO", "AV", "CD", "PT", "CS"] },
+            { q: "Un colega dice que tu mayor virtud es que...", opts: ["Encontrás soluciones prácticas", "Convertís ideas en algo visual", "Ves riesgos antes que nadie", "Interpretás datos para tomar decisiones", "Mantenés al equipo enfocado", "Entendés de elementos tecnológicos"], vals: ["DS", "AV", "CS", "AD", "PT", "RC"] },
+            { q: "Si la tecnología fuera un deporte, sería...", opts: ["Ajedrez: estrategia pura y lógica", "Atletismo artístico: expresión y estética", "Artes marciales: defensa y contraataque", "Fórmula 1: velocidad y precisión de datos", "Rugby: liderazgo y táctica de equipo", "Motocross: dominio total del equipo físico"], vals: ["DS", "AV", "CS", "AD", "PT", "RC"] },
+            { q: "¿Cómo preferís trabajar?", opts: ["Solo y concentrado", "En laboratorio", "En equipo creativo", "Analizando grandes volúmenes de info", "Coordinando tareas", "Instalando o reparando equipos"], vals: ["DS", "BIO", "AV", "AD", "PT", "RC"] },
+            { q: "¿Qué tipo de contenido consumís más?", opts: ["Programación", "Ciencia/Documentales", "Videos/Streaming", "Seguridad informática/Hacking", "Contenido organizativo", "Tutoriales técnicos"], vals: ["DS", "BIO", "AV", "CS", "PT", "RC"] },
+            { q: "¿Qué te describiría mejor?", opts: ["Analítico y lógico", "Curioso y observador", "Creativo y visual", "Sociable y comunicativo", "Metódico y organizado", "Práctico y manual"], vals: ["AD", "BIO", "AV", "CD", "PT", "OI"] },
+            { q: "¿Qué te gustaría aprender?", opts: ["Crear apps", "Biología", "Producción audiovisual", "Marketing digital", "Bases de datos y SQL", "Herramientas de oficina"], vals: ["DS", "BIO", "AV", "CD", "AD", "OI"] },
+            { q: "¿Qué te motiva más?", opts: ["Detectar vulnerabilidades", "Descubrir cosas nuevas", "Expresarte visualmente", "Comunicar mensajes", "Lograr objetivos de equipo", "Brindar soporte técnico"], vals: ["CS", "BIO", "AV", "CD", "PT", "OI"] },
+            { q: "¿Qué ambiente preferís?", opts: ["Frente a una consola de comandos", "Laboratorio", "Set creativo", "Entorno dinámico/Social", "Planta industrial", "Oficina administrativa"], vals: ["CS", "BIO", "AV", "CD", "PT", "OI"] },
+            { q: "¿Qué te resulta más fácil?", opts: ["Pensar soluciones lógicas", "Analizar tendencias y estadísticas", "Crear contenido", "Hablar/Expresarte", "Planificar procesos", "Optimizar software o hardware"], vals: ["DS", "AD", "AV", "CD", "PT", "OI"] },
+            { q: "¿Qué te gustaría lograr?", opts: ["Desarrollar tecnología", "Aportar a la ciencia", "Hacer sistemas más seguros", "Comunicar efectivamente", "Optimizar la producción", "Soporte informático"], vals: ["DS", "BIO", "CS", "CD", "PT", "OI"] }
         ];
 
+        let scores = { DS: 0, BIO: 0, AV: 0, CD: 0, PT: 0, PW: 0, OI: 0, RC: 0, CS: 0, AD: 0 };
         let currentIdx = 0;
-        let scores = { DS: 0, BIO: 0, AV: 0, CD: 0, PT: 0, PW: 0, OI: 0, RC: 0 };
         let topThree = [];
 
         const profileMap = {
@@ -140,9 +144,11 @@
             AV: { career: "Realización Audiovisual", unis: ["Universidad Nacional de Pilar (unpilar)"] },
             CD: { career: "Comunicación Digital", unis: ["Universidad Nacional de Pilar (unpilar)"] },
             PT: { career: "Producción y Tecnología", unis: ["Universidad Nacional de Pilar (unpilar)"] },
-            PW: { career: "Programación Web", unis: ["Curso Municipal Pilar"] },
+            PW: { career: "Programación Web", unis: ["Curso Municipal Pilar / Griky"] },
             OI: { career: "Operador de Informática", unis: ["Curso Municipal Pilar"] },
-            RC: { career: "Reparación de Celulares", unis: ["Curso Municipal Pilar"] }
+            RC: { career: "Reparación de Celulares", unis: ["Curso Municipal Pilar"] },
+            CS: { career: "Ciberseguridad", unis: ["Griky"] },
+            AD: { career: "Análisis de Datos / SQL", unis: ["Griky"] }
         };
 
         function startTest() {
@@ -162,89 +168,128 @@
                 const btn = document.createElement('button');
                 btn.className = "option-btn w-full text-left p-4 rounded-2xl text-xs font-semibold bg-white border border-gray-100/50";
                 btn.innerText = opt;
-                btn.onclick = () => { 
-                    scores[q.vals[i]]++; 
-                    currentIdx++; 
-                    if (currentIdx < questions.length) showQuestion(); 
-                    else showResults(); 
-                };
+                btn.onclick = () => { scores[q.vals[i]]++; currentIdx++; if (currentIdx < questions.length) showQuestion(); else showResults(); };
                 container.appendChild(btn);
             });
         }
 
         function generateDynamicDescription(scores) {
-            const maxScore = Math.max(...Object.values(scores));
-            const topTraits = Object.keys(scores).filter(key => scores[key] === maxScore);
-            const traits = {
-                DS: "lógica aguda y resolución de problemas.",
-                BIO: "curiosidad científica y análisis biotecnológico.",
-                AV: "creatividad visual y talento narrativo.",
-                CD: "estrategia comunicativa y medios digitales.",
-                PT: "eficiencia y gestión de procesos.",
-                PW: "perfil de constructor web moderno.",
-                OI: "organización metódica y soporte IT.",
-                RC: "destreza técnica y hardware."
+            const sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+            const primary = sorted[0][0];
+            const secondary = sorted[1][0];
+            const analysisMap = {
+                DS: "una marcada preferencia por la resolución de problemas mediante lógica y algoritmos.",
+                BIO: "un fuerte interés en la investigación científica y el desarrollo biotecnológico.",
+                AV: "elecciones orientadas a la creación de contenido visual, narrativa y estética.",
+                CD: "una inclinación hacia la comunicación estratégica en entornos digitales.",
+                PT: "un enfoque en la optimización de procesos y la gestión tecnológica industrial.",
+                CS: "respuestas que priorizan la protección de datos y la detección de vulnerabilidades.",
+                AD: "una selección basada en la interpretación de grandes volúmenes de información y patrones.",
+                OI: "interés en el soporte técnico y la organización de sistemas informáticos de oficina.",
+                RC: "destreza técnica aplicada al mantenimiento y reparación de hardware físico.",
+                PW: "enfoque directo en la construcción y arquitectura de plataformas web modernas."
             };
-            return "Tenés un perfil con " + (traits[topTraits[0]] || "habilidades técnicas.") + " Ideal para entornos que exigen soluciones reales.";
+            return `Tus respuestas indican ${analysisMap[primary]} Además, has mostrado interés complementario en ${analysisMap[secondary].replace("una ", "").replace("un ", "")}`;
         }
 
         function showResults() {
             document.getElementById('question-view').classList.add('hidden');
             document.getElementById('result-view').classList.remove('hidden');
             topThree = Object.entries(scores).sort((a,b) => b[1] - a[1]).slice(0, 3).map(item => profileMap[item[0]]);
+            
             document.getElementById('career-1').innerText = topThree[0].career;
-            document.getElementById('desc-1').innerText = generateDynamicDescription(scores);
             document.getElementById('uni-1').innerText = topThree[0].unis[0];
-            document.getElementById('career-2').innerText = "2° " + topThree[1].career;
+            document.getElementById('desc-1').innerText = generateDynamicDescription(scores);
+            
+            document.getElementById('career-2').innerText = topThree[1].career;
             document.getElementById('uni-2').innerText = topThree[1].unis[0];
-            document.getElementById('career-3').innerText = "3° " + topThree[2].career;
+            document.getElementById('career-3').innerText = topThree[2].career;
             document.getElementById('uni-3').innerText = topThree[2].unis[0];
             
             new Chart(document.getElementById('barChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['Lógica', 'Ciencia', 'Creativ.', 'Estrat.', 'Gestión'],
-                    datasets: [{ data: [scores.DS + scores.PW, scores.BIO, scores.AV, scores.CD, scores.PT + scores.OI + scores.RC], backgroundColor: ['#1e40af', '#2563eb', '#3b82f6', '#60a5fa', '#93c5fd'], borderRadius: 6 }]
+                    labels: ['Sistemas', 'Ciencia', 'Creativ.', 'Seg/Datos', 'Gestión'],
+                    datasets: [{ 
+                        data: [scores.DS + scores.PW, scores.BIO, scores.AV + scores.CD, scores.CS + scores.AD, scores.PT + scores.OI + scores.RC], 
+                        backgroundColor: ['#1e40af', '#2563eb', '#3b82f6', '#60a5fa', '#93c5fd'], 
+                        borderRadius: 6 
+                    }]
                 },
                 options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { display: false } }, maintainAspectRatio: false }
             });
         }
 
+        // FUNCIÓN DEL QR RESTAURADA
         function showQR() {
             const container = document.getElementById('qrcode');
-            container.innerHTML = '';
-            new QRCode(container, { text: window.location.href, width: 160, height: 160, colorDark : "#1e40af" });
+            container.innerHTML = ''; // Limpiar QR anterior
+            new QRCode(container, {
+                text: window.location.href, // Compartir URL actual
+                width: 160,
+                height: 160,
+                colorDark : "#1e40af", // Azul de la muni
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
             document.getElementById('qr-modal').classList.remove('hidden');
         }
 
         async function generatePDF() {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
-            doc.setFillColor(30, 64, 175);
-            doc.rect(0, 0, 210, 40, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.setFontSize(22);
-            doc.text("Reporte Vocacional Pilar", 20, 25);
+            const pageWidth = doc.internal.pageSize.getWidth();
             
+            // --- ENCABEZADO AZUL (Según modelo solicitado) ---
+            doc.setFillColor(30, 64, 175); 
+            doc.rect(0, 0, pageWidth, 45, 'F');
+            
+            doc.setTextColor(255, 255, 255);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(22);
+            doc.text("RESULTADOS TEST VOCACIONAL", 20, 25);
+            
+            doc.setFontSize(11);
+            doc.setFont("helvetica", "normal");
+            doc.text("Municipalidad de Pilar - Club de Innovacion", 20, 33);
+            
+            // --- CONTENIDO ---
             doc.setTextColor(40, 40, 40);
-            doc.setFontSize(14);
-            doc.text("Tus 3 Mejores Coincidencias:", 20, 55);
+            doc.setFontSize(13);
+            doc.setFont("helvetica", "bold");
+            doc.text("Tu Perfil Principal:", 20, 60);
             
             doc.setTextColor(30, 64, 175);
-            doc.setFontSize(16);
-            doc.text("1. " + topThree[0].career, 20, 65);
+            doc.setFontSize(24);
+            doc.text(topThree[0].career.toUpperCase(), 20, 73);
+            
+            doc.setTextColor(60, 60, 60);
             doc.setFontSize(10);
-            doc.setTextColor(80, 80, 80);
-            doc.text(doc.splitTextToSize(topThree[0].personality, 170), 20, 72);
-            doc.text("Sede: " + topThree[0].unis[0], 20, 82);
+            doc.setFont("helvetica", "italic");
+            const desc = generateDynamicDescription(scores);
+            doc.text(doc.splitTextToSize(desc, pageWidth - 40), 20, 83);
+            
+            doc.setFont("helvetica", "bold");
+            doc.text("Lugar de cursada: " + topThree[0].unis[0], 20, 98);
 
+            // --- GRÁFICO ---
             doc.setTextColor(40, 40, 40);
-            doc.text("- 2. " + topThree[1].career + " (" + topThree[1].unis[0] + ")", 20, 95);
-            doc.text("- 3. " + topThree[2].career + " (" + topThree[2].unis[0] + ")", 20, 102);
-
+            doc.setFontSize(13);
+            doc.text("Distribución de Aptitudes:", 20, 118);
             const canvas = document.getElementById('barChart');
-            doc.addImage(canvas.toDataURL('image/png'), 'PNG', 15, 115, 180, 70);
-            doc.save("Reporte_Test_Pilar.pdf");
+            const chartImg = canvas.toDataURL('image/png', 1.0);
+            doc.addImage(chartImg, 'PNG', 15, 123, 180, 75);
+
+            // --- SECUNDARIOS ---
+            doc.setFontSize(13);
+            doc.setFont("helvetica", "bold");
+            doc.text("Otras carreras que coinciden con vos:", 20, 215);
+            
+            doc.setFontSize(11);
+            doc.text("2. " + topThree[1].career + " (Sede: " + topThree[1].unis[0] + ")", 20, 228);
+            doc.text("3. " + topThree[2].career + " (Sede: " + topThree[2].unis[0] + ")", 20, 243);
+
+            doc.save("Reporte_Vocacional_Tech_Pilar.pdf");
         }
     </script>
 </body>
