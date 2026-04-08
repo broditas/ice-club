@@ -174,22 +174,51 @@
         }
 
         function generateDynamicDescription(scores) {
-            const sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+            const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
             const primary = sorted[0][0];
-            const secondary = sorted[1][0];
-            const analysisMap = {
-                DS: "una marcada preferencia por la resolución de problemas mediante lógica y algoritmos.",
-                BIO: "un fuerte interés en la investigación científica y el desarrollo biotecnológico.",
-                AV: "elecciones orientadas a la creación de contenido visual, narrativa y estética.",
-                CD: "una inclinación hacia la comunicación estratégica en entornos digitales.",
-                PT: "un enfoque en la optimización de procesos y la gestión tecnológica industrial.",
-                CS: "respuestas que priorizan la protección de datos y la detección de vulnerabilidades.",
-                AD: "una selección basada en la interpretación de grandes volúmenes de información y patrones.",
-                OI: "interés en el soporte técnico y la organización de sistemas informáticos de oficina.",
-                RC: "destreza técnica aplicada al mantenimiento y reparación de hardware físico.",
-                PW: "enfoque directo en la construcción y arquitectura de plataformas web modernas."
+            
+            // Agrupación de respuestas por competencias clave
+            const areas = {
+                logica: (scores.DS || 0) + (scores.PW || 0) + (scores.CS || 0),
+                analitica: (scores.AD || 0) + (scores.BIO || 0),
+                creativa: (scores.AV || 0) + (scores.CD || 0),
+                operativa: (scores.PT || 0) + (scores.OI || 0) + (scores.RC || 0)
             };
-            return `Tus respuestas indican ${analysisMap[primary]} Además, has mostrado interés complementario en ${analysisMap[secondary].replace("una ", "").replace("un ", "")}`;
+
+            // Selección del rasgo principal basado en el grupo de respuestas dominante
+            let rasgoPrincipal = "";
+            const maxArea = Object.entries(areas).sort((a,b) => b[1] - a[1])[0][0];
+            
+            switch(maxArea) {
+                case 'logica': 
+                    rasgoPrincipal = "una perfil estructurado con gran capacidad para la resolución de problemas mediante algoritmos y seguridad"; 
+                    break;
+                case 'analitica': 
+                    rasgoPrincipal = "una fuerte inclinación hacia el método científico, el análisis de datos y la búsqueda de patrones"; 
+                    break;
+                case 'creativa': 
+                    rasgoPrincipal = "un perfil altamente creativo que busca comunicar ideas a través de lenguajes visuales y digitales"; 
+                    break;
+                case 'operativa': 
+                    rasgoPrincipal = "una destreza práctica orientada a la optimización de procesos técnicos y el soporte de infraestructuras"; 
+                    break;
+            }
+
+            // Vinculación del rasgo con la carrera específica
+            const nexoCarrera = {
+                DS: "Esta base lógica es fundamental para el Desarrollo de Software, donde la creación de sistemas complejos requiere tu nivel de precisión.",
+                BIO: "Esta capacidad analítica es el motor ideal para la Biotecnología, permitiéndote abordar desafíos científicos con una visión tecnológica.",
+                AV: "Tu visión creativa encuentra su lugar natural en la Realización Audiovisual, transformando conceptos en experiencias visuales de alto impacto.",
+                CD: "Tu perfil comunicativo y digital es clave para la Comunicación Digital, liderando la creación de narrativas en entornos dinámicos.",
+                PT: "Tu enfoque en la optimización es esencial en Producción y Tecnología para mejorar la eficiencia en procesos industriales modernos.",
+                CS: "Esa mentalidad estructurada y vigilante es el pilar de la Ciberseguridad, protegiendo activos digitales críticos contra amenazas.",
+                AD: "Tu destreza con los patrones te convierte en un experto natural para el Análisis de Datos, extrayendo valor real de grandes volúmenes de información.",
+                OI: "Esa capacidad operativa garantiza la estabilidad en la Operación Informática, gestionando sistemas con un enfoque metódico y seguro.",
+                RC: "Tu habilidad práctica es indispensable en la Reparación de Dispositivos, diagnosticando y resolviendo fallas técnicas en hardware esencial.",
+                PW: "Esa combinación de lógica y creatividad visual es perfecta para el Desarrollo Web, construyendo interfaces modernas y funcionales."
+            };
+
+            return `Tus respuestas revelan ${rasgoPrincipal}. ${nexoCarrera[primary] || ""}`;
         }
 
         function showResults() {
